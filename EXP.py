@@ -107,12 +107,45 @@ gen3Yield = {'abra': 73, 'absol': 174, 'aerodactyl': 202, 'aggron': 205,
              'wobbuffet': 177, 'wooper': 52, 'wurmple': 54, 'wynaut': 44,
              'xatu': 171, 'yanma': 147, 'zangoose': 165, 'zapdos': 216,
              'zigzagoon': 60, 'zubat': 54}
-gen4Yield = {'turtwig': 64, 'grotle': 141, 'torterra': 208}
+gen4Updates = {'turtwig': 64, 'grotle': 141, 'torterra': 208, 'chimchar': 65,
+             'monferno': 142, 'infernape': 209, 'piplup': 66, 'prinplup': 143,
+             'empoleon': 210, 'starly': 56, 'staravia': 113, 'staraptor': 172,
+             'bidoof': 58, 'bibarel': 116, 'kricketot': 54, 'kricketune': 159,
+             'shinx': 60, 'luxio': 117, 'luxray': 194, 'budew': 68,
+             'roserade': 204, 'cranidos': 99, 'rampardos': 199, 'shieldon': 99,
+             'bastiodon': 199, 'burmy': 61, 'wormadam': 159, 'mothim': 159,
+             'combee': 63, 'vespiquen': 188, 'patchirisu': 120, 'buizel': 75,
+             'floatzel': 178, 'cherubi': 68, 'cherrim': 133, 'shellos': 73,
+             'gastrodon': 176, 'ambipom': 186, 'drifloon': 127, 'drifblim': 204,
+             'buneary': 84, 'lopunny': 178, 'mismagius': 187, 'honchkrow': 187,
+             'glameow': 71, 'purugly': 183, 'chingling': 74, 'stunky': 79,
+             'skuntank': 209, 'bronor': 72, 'bronzong': 188, 'bonsly': 68,
+             'mime jr.': 78, 'happiny': 255, 'chatot': 107, 'spiritomb': 168,
+             'gible': 67, 'gabite': 144, 'garchomp': 218, 'munchlax': 94,
+             'riolu': 72, 'lucario': 204, 'hippopotas': 95, 'hippowdon': 198,
+             'skorupi': 114, 'drapion': 204, 'croagunk': 83, 'toxicroak': 181,
+             'carnivine': 164, 'finneon': 90, 'lumineon': 156, 'mantyke': 108,
+             'snover': 131, 'abomasnow': 214, 'weavile': 199, 'magnezone': 211, 
+             'lickilicky': 193, 'rhyperior': 217, 'tangrowth': 211,
+             'electivire': 199, 'magmortar': 199, 'togekiss': 220,
+             'yanmega': 198, 'leafeon': 196, 'glaceon': 196, 'gliscor': 192,
+             'mamoswine': 207, 'porygon-z': 185, 'gallade': 208,
+             'probopass': 198, 'dusknoir': 210, 'froslass': 187, 'rotom': 132,
+             'uxie': 210, 'mespirit': 210, 'azelf': 210, 'dialga': 220,
+             'palkia': 220, 'heatran': 215, 'regigigas': 220, 'giratina': 220,
+             'cresselia': 210, 'phione': 165, 'manaphy': 215, 'darkrai': 210,
+             'shaymin': 64, 'arceus': 255, 'abra': 75, 'machop': 75,
+             'geodude': 73, 'omanyte': 99, 'kabuto': 99, 'kabutops': 199,
+             'dunsparce': 125, 'silcoon': 72, 'dustox': 161, 'lileep': 99,
+             'cradily': 199, 'anorith': 99, 'armaldo': 99}
+gen4Yield = gen3Yield | gen4Updates
 gen5Yield = {}
 gen6Yield = {}
 gen7Yield = {}
 
 def genOne():
+    for key in gen4Yield:
+        print(key, gen4Yield[key])
     return 0
 
 def genTwo():
@@ -188,6 +221,8 @@ while run:
     again = input('Again?(y/n): ').lower()
     if again == 'n':
         exit(0)
+    #genOne()
+    break
 
 def getMax():
 # Print key with highest value

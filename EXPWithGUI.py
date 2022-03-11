@@ -1,3 +1,4 @@
+# Python 3.9/3.10
 import tkinter as tk
 from tkinter import ttk
 from math import floor
@@ -206,14 +207,32 @@ number.set(1)
 holdingShare = tk.IntVar()
 holdingShare.set(0)
 shareGate = tk.DISABLED
+generation = tk.IntVar()
+generation.set(3)
+generations = (('Gen 1', 1),
+               ('Gen 2', 2),
+               ('Gen 3', 3),
+               ('Gen 4', 4),
+               ('Gen 5', 5),
+               ('Gen 6', 6),
+               ('Gen 7', 7),
+               ('Gen 8', 8),
+               ('Gen 9', 9))
+
 
 # Create container frames
 # TODO: Add generation select (Radio button)
+generationLabelFrame = ttk.LabelFrame(root, text = "Generation")
+generationLabelFrame.pack(padx = 20, pady = 10, fill = 'x')
+
 opponentLabelFrame = ttk.LabelFrame(root, text = "Opponent Pokemon")
 opponentLabelFrame.pack(padx = 20, pady = 10, fill = 'x')
 
 yourLabelFrame = ttk.LabelFrame(root, text = "Your Pokemon")
-yourLabelFrame.pack(padx = 20, pady = 10)
+yourLabelFrame.pack(padx = 20, pady = 10, fill = 'x')
+
+generationFrame = ttk.Frame(generationLabelFrame)
+generationFrame.pack(padx = 10, pady = 10, fill = "x")
 
 pokemonFrame = ttk.Frame(opponentLabelFrame)
 pokemonFrame.pack(padx = 10, pady = 10, fill = "x")
@@ -230,8 +249,18 @@ numberFrame.pack(padx = 10, pady = 10)
 bottomFrame = ttk.Frame(root)
 bottomFrame.pack(padx = 10, pady = 10, fill = "x")
 
+# Generation Frame
+i = 0
+for gen in generations:
+    r = ttk.Radiobutton(
+        generationFrame,
+        text = gen[0],
+        value = gen[1],
+        variable = generation)
+    r.grid(column = i, row = 0, padx = 5, pady = 5)
+    i += 1
 
-# Pokemon (Top) frame
+# Pokemon frame
 pokemonLabel = ttk.Label(pokemonFrame, text = "Pokemon: ")
 pokemonLabel.pack()
 
