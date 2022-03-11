@@ -5,7 +5,11 @@
 from math import floor
 from sys import exit
 # Dictionaries containing the exp values for each Pokemon
-gen1Yield = {}
+gen1Yield = {'bulbasaur': 64, 'ivysaur': 141, 'venusaur': 208, 'charmander': 65,
+             'charmeleon': 142, 'charizard': 209, 'sqirtle': 66,
+             'wartortle': 143, 'blastoise': 210, 'caterpie': 53, 'metapod': 72,
+             'butterfree': 160, 'weedle': 52, 'kakuna': 71, 'beedrill': 159,
+             'pidgey': 55, 'pidgeotto': 113, 'pidgeot': 172}
 gen2Yield = {}
 gen3Yield = {'abra': 73, 'absol': 174, 'aerodactyl': 202, 'aggron': 205,
              'aipom': 94, 'alakazam': 186, 'altaria': 188, 'ampharos': 194,
