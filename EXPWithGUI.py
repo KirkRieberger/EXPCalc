@@ -108,8 +108,18 @@ def levelChanged(event):
     msg = f"Opponent's Level: {L}"
     levelDisplay.config(text = msg)
 
-# Will actually do the exp calculation
-def go():
+def shareNumberUpdate():
+    global shareGate
+    if shareGate == tk.DISABLED:
+        shareNumber.config(state = tk.NORMAL, values = (1, 2, 3, 4, 5, 6))
+        holdingShare.set(1)
+        shareGate = tk.NORMAL
+    else:
+        shareNumber.config(state = tk.DISABLED, values = (0))
+        holdingShare.set(0)
+        shareGate = tk.DISABLED
+
+def gen3Main():
     if trainer.get() == 1:
         a = 1.5
     else:
@@ -136,10 +146,46 @@ def go():
 
     b = gen3Yield[pokemon.get().lower()]
 
-    exp = floor((a*t*b*e*L)/(7*s))
+    return(floor((a*t*b*e*L)/(7*s)))
+    
+def gen3Shared():
+    if trainer.get() == 1:
+        a = 1.5
+    else:
+        a = 1
 
-    msg = f'EXP Points gained: {exp}'
-    resultLabel.config(text = msg)
+    if egg.get() == 1:
+        e = 1.5
+    else:
+        e = 1
+
+    if ot.get():
+        t = 1
+    else:
+        t = 1.5
+
+    if expShare.get():
+        s = holdingShare.get()
+
+    s = s*2
+
+    L = level.get()
+
+    b = gen3Yield[pokemon.get().lower()]
+
+    return(floor((a*t*b*e*L)/(7*s)))
+
+# Will actually do the exp calculation
+def go():
+    if expShare.get():
+        exp = gen3Main()
+        shared = gen3Shared()
+        msg = f'Main EXP Points Gained: {exp}, Shared EXP Points Gained: {shared}'
+        resultLabel.config(text = msg)
+    else:
+        exp = gen3Main()
+        msg = msg = f'Main EXP Points Gained: {exp}'
+        resultLabel.config(text = msg)
 
 # Create main window
 root = tk.Tk()
@@ -154,26 +200,40 @@ egg = tk.BooleanVar()
 ot = tk.BooleanVar()
 expShare = tk.BooleanVar()
 level = tk.IntVar()
-level.set(1)
+level.set(50)
 number = tk.IntVar()
 number.set(1)
+holdingShare = tk.IntVar()
+holdingShare.set(0)
+shareGate = tk.DISABLED
 
 # Create container frames
-pokemonFrame = ttk.Frame(root)
+# TODO: Add generation select (Radio button)
+opponentLabelFrame = ttk.LabelFrame(root, text = "Opponent Pokemon")
+opponentLabelFrame.pack(padx = 20, pady = 10, fill = 'x')
+
+yourLabelFrame = ttk.LabelFrame(root, text = "Your Pokemon")
+yourLabelFrame.pack(padx = 20, pady = 10)
+
+pokemonFrame = ttk.Frame(opponentLabelFrame)
 pokemonFrame.pack(padx = 10, pady = 10, fill = "x")
 
-defeatedFrame = ttk.Frame(root)
+defeatedFrame = ttk.Frame(opponentLabelFrame)
 defeatedFrame.pack(padx = 10, pady = 10, fill = "x")
 
-checkboxFrame = ttk.Frame(root)
+checkboxFrame = ttk.Frame(yourLabelFrame)
 checkboxFrame.pack(padx = 10, pady = 10, fill = "x")
+
+numberFrame = ttk.Frame(yourLabelFrame)
+numberFrame.pack(padx = 10, pady = 10)
 
 bottomFrame = ttk.Frame(root)
 bottomFrame.pack(padx = 10, pady = 10, fill = "x")
 
+
 # Pokemon (Top) frame
 pokemonLabel = ttk.Label(pokemonFrame, text = "Pokemon: ")
-pokemonLabel.pack(side = 'left')
+pokemonLabel.pack()
 
 pokemonBox = ttk.Combobox(pokemonFrame, textvariable = pokemon)
 gen3Names = []
@@ -181,23 +241,11 @@ for key in gen3Yield.keys():
     gen3Names.append(key.capitalize())
 pokemonBox['values'] = [gen3Names[i] for i in range(0, len(gen3Names))]
 pokemonBox['state'] = 'readonly'
-pokemonBox.pack(side = 'left')
-
-numberLabel = ttk.Label(pokemonFrame, text = "Number that battled: ")
-numberLabel.pack(side = 'left')
-
-pokemonNumber = ttk.Spinbox(pokemonFrame,
-                            from_ = 1,
-                            to = 6,
-                            values = (1, 2, 3, 4, 5, 6),
-                            textvariable = number,
-                            wrap = True,
-                            width = 3)
-pokemonNumber.pack(side = 'left')
+pokemonBox.pack()
 
 # Defeated (2nd) frame
 levelDisplay = ttk.Label(defeatedFrame,
-                         text = "Opponent's Level: 1")
+                         text = "Opponent's Level: 50")
 levelDisplay.pack()
 
 levelSlider = ttk.Scale(defeatedFrame,
@@ -214,28 +262,54 @@ ttk.Checkbutton(checkboxFrame,
                 variable = trainer,
                 onvalue = True,
                 offvalue = False
-).pack(side = 'left')
+).grid(column = 0, row = 0)
 
 ttk.Checkbutton(checkboxFrame, 
                 text = "Lucky Egg",
                 variable = egg,
                 onvalue = True,
                 offvalue = False
-).pack(side = 'left')
+).grid(column = 1, row = 0)
 
 ttk.Checkbutton(checkboxFrame, 
                 text = "Original Trainer",
                 variable = ot,
                 onvalue = True,
                 offvalue = False
-).pack(side = 'left')
+).grid(column = 2, row = 0)
 
 ttk.Checkbutton(checkboxFrame, 
                 text = "EXP Share",
                 variable = expShare,
                 onvalue = True,
-                offvalue = False
-).pack(side = 'left')
+                offvalue = False,
+                command = shareNumberUpdate
+).grid(column = 3, row = 0)
+
+numberLabel = ttk.Label(numberFrame, text = "Number that battled: ")
+numberLabel.pack(side = 'left')
+
+pokemonNumber = ttk.Spinbox(numberFrame,
+                            from_ = 1,
+                            to = 6,
+                            values = (1, 2, 3, 4, 5, 6),
+                            textvariable = number,
+                            wrap = True,
+                            width = 3)
+pokemonNumber.pack(side = 'left')
+
+shareLabel = ttk.Label(numberFrame, text = "Number that held exp share: ")
+shareLabel.pack(side = 'left')
+
+shareNumber = ttk.Spinbox(numberFrame,
+                            from_ = 0,
+                            to = 6,
+                            values = (0),
+                            textvariable = holdingShare,
+                            wrap = True,
+                            width = 3,
+                            state = shareGate)
+shareNumber.pack(side = 'left')
 
 # bottom frame
 goButton = ttk.Button(bottomFrame, text="Go", command=go)
