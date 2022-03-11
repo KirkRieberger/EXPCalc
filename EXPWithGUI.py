@@ -1,12 +1,8 @@
-# Pokemon Experience Gain Calculator V1
-# Update to Python 3.9 dipshit
-# https://stackoverflow.com/questions/38987/how-do-i-merge-two-dictionaries-in-a-single-expression-taking-union-of-dictiona
-# Kirk Rieberger
+import tkinter as tk
+from tkinter import ttk
+from tkinter.messagebox import showinfo, showerror
 from math import floor
-from sys import exit
-# Dictionaries containing the exp values for each Pokemon
-gen1Yield = {}
-gen2Yield = {}
+
 gen3Yield = {'abra': 73, 'absol': 174, 'aerodactyl': 202, 'aggron': 205,
              'aipom': 94, 'alakazam': 186, 'altaria': 188, 'ampharos': 194,
              'anorith': 119, 'arbok': 147, 'arcanine': 213, 'ariados': 134,
@@ -107,91 +103,145 @@ gen3Yield = {'abra': 73, 'absol': 174, 'aerodactyl': 202, 'aggron': 205,
              'wobbuffet': 177, 'wooper': 52, 'wurmple': 54, 'wynaut': 44,
              'xatu': 171, 'yanma': 147, 'zangoose': 165, 'zapdos': 216,
              'zigzagoon': 60, 'zubat': 54}
-gen4Yield = {'turtwig': 64, 'grotle': 141, 'torterra': 208}
-gen5Yield = {}
-gen6Yield = {}
-gen7Yield = {}
 
-def genOne():
-    for i in gen3Yield.keys():
-        print(i)
-    return 0
+def levelChanged(event):
+    L = level.get()
+    msg = f"Opponent's Level: {L}"
+    levelDisplay.config(text = msg)
 
-def genTwo():
-    return 0
-
-def genThree():
-    a = input('Was this a trainer battle?(y/n): ').lower()
-    if a == 'y':
+# Will actually do the exp calculation
+def go():
+    if trainer.get() == 1:
         a = 1.5
     else:
         a = 1
 
-    b = input('Pokemon that was battled: ').lower()
-    while b not in gen3Yield:
-        print('Please enter a valid generation 3 Pokemon name.')
-        b = input('Pokemon that was battled: ').lower()
-    b = gen3Yield[b]
-
-    e = input('Is your Pokemon holding a Lucky Egg?(y/n): ').lower()
-    if e == 'y':
+    if egg.get() == 1:
         e = 1.5
     else:
         e = 1
 
-    while True:
-        try:
-            L = int(input('Level of defeated Pokemon: '))
-            while L < 1 or L > 100:
-                print('Pokemon level must be between 1 and 100 inclusive.')
-                L = int(input('Level of defeated Pokemon: '))
-            break
-        except ValueError:
-            print('Please enter a valid level from 1 to 100 inclusive.')
-
-    s = input('Are any of your Pokemon holding EXP Shares?(y/n): ').lower()
-    if s == 'y':
-        s = 2*int(input('How many of your Pokemon participated in battle? '))
-        while s < 1 or s > 6:
-            print("Number of Pokemon that battled must be between 1 and 6 inclusive.")
-            s = 2*int(input('How many of your Pokemon participated in battle? '))
-    else:
-        s = int(input('How many of your Pokemon participated in battle? '))
-        while s < 1 or s > 6:
-            print("Number of Pokemon that battled must be between 1 and 6 inclusive.")
-            s = int(input('How many of your Pokemon participated in battle? '))
-
-    t = input("Are you the battling Pokemon's original trainer?(y/n): ").lower()
-    if t == 'y':
+    if ot.get():
         t = 1
     else:
         t = 1.5
 
-    exp = (a*t*b*e*L)/(7*s)
+    if expShare.get():
+        s = 2
+    else:
+        s = 1
 
-    return floor(exp)
+    s = s*number.get()
 
-def genFour():
-    return 0
+    L = level.get()
 
-def genFive():
-    return 0
+    b = gen3Yield[pokemon.get().lower()]
 
-def genSix():
-    return 0
+    exp = floor((a*t*b*e*L)/(7*s))
 
-def genSeven():
-    return 0
+    msg = f'EXP Points gained: {exp}'
+    resultLabel.config(text = msg)
 
+# Create main window
+root = tk.Tk()
+root.title("EXP Calculator")
 
-run = 1
-while run:
-    print("Generation 3 experience points gained: ", genThree(), "\n")
-    again = input('Again?(y/n): ').lower()
-    if again == 'n':
-        exit(0)
+# Return values from UI
+pokemon = tk.StringVar()
+pokemon.set("Abra")
+trainer = tk.BooleanVar()
+egg = tk.BooleanVar()
+ot = tk.BooleanVar()
+expShare = tk.BooleanVar()
+level = tk.IntVar()
+level.set(1)
+number = tk.IntVar()
+number.set(1)
 
-def getMax():
-# Print key with highest value
-    allValues = gen3Yield.values()
-    print(max(gen3Yield, key=gen3Yield.get), max(allValues))
+# Create container frames
+pokemonFrame = ttk.Frame(root)
+pokemonFrame.pack(padx = 10, pady = 10, fill = "x")
+
+defeatedFrame = ttk.Frame(root)
+defeatedFrame.pack(padx = 10, pady = 10, fill = "x")
+
+checkboxFrame = ttk.Frame(root)
+checkboxFrame.pack(padx = 10, pady = 10, fill = "x")
+
+bottomFrame = ttk.Frame(root)
+bottomFrame.pack(padx = 10, pady = 10, fill = "x")
+
+# Pokemon (Top) frame
+pokemonLabel = ttk.Label(pokemonFrame, text = "Pokemon: ")
+pokemonLabel.pack(side = 'left')
+
+pokemonBox = ttk.Combobox(pokemonFrame, textvariable = pokemon)
+gen3Names = []
+for key in gen3Yield.keys():
+    gen3Names.append(key.capitalize())
+pokemonBox['values'] = [gen3Names[i] for i in range(0, len(gen3Names))]
+pokemonBox['state'] = 'readonly'
+pokemonBox.pack(side = 'left')
+
+numberLabel = ttk.Label(pokemonFrame, text = "Number that battled: ")
+numberLabel.pack(side = 'left')
+
+pokemonNumber = ttk.Spinbox(pokemonFrame,
+                            from_ = 1,
+                            to = 6,
+                            values = (1, 2, 3, 4, 5, 6),
+                            textvariable = number,
+                            wrap = True,
+                            width = 3)
+pokemonNumber.pack(side = 'left')
+
+# Defeated (2nd) frame
+levelDisplay = ttk.Label(defeatedFrame,
+                         text = "Opponent's Level: 1")
+levelDisplay.pack()
+
+levelSlider = ttk.Scale(defeatedFrame,
+                        from_ = 1,
+                        to = 100,
+                        orient = 'horizontal',
+                        variable = level,
+                        command = levelChanged)
+levelSlider.pack(fill = 'x', side = 'bottom')
+
+# Checkbox (Middle) frame
+ttk.Checkbutton(checkboxFrame, 
+                text = "Trainer Battle",
+                variable = trainer,
+                onvalue = True,
+                offvalue = False
+).pack(side = 'left')
+
+ttk.Checkbutton(checkboxFrame, 
+                text = "Lucky Egg",
+                variable = egg,
+                onvalue = True,
+                offvalue = False
+).pack(side = 'left')
+
+ttk.Checkbutton(checkboxFrame, 
+                text = "Original Trainer",
+                variable = ot,
+                onvalue = True,
+                offvalue = False
+).pack(side = 'left')
+
+ttk.Checkbutton(checkboxFrame, 
+                text = "EXP Share",
+                variable = expShare,
+                onvalue = True,
+                offvalue = False
+).pack(side = 'left')
+
+# bottom frame
+goButton = ttk.Button(bottomFrame, text="Go", command=go)
+goButton.pack()
+
+resultLabel = ttk.Label(bottomFrame)
+resultLabel.pack(side = 'bottom')
+
+root.mainloop()
