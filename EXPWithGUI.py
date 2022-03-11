@@ -1,6 +1,5 @@
 import tkinter as tk
 from tkinter import ttk
-from tkinter.messagebox import showinfo, showerror
 from math import floor
 
 gen3Yield = {'abra': 73, 'absol': 174, 'aerodactyl': 202, 'aggron': 205,
@@ -145,6 +144,7 @@ def go():
 # Create main window
 root = tk.Tk()
 root.title("EXP Calculator")
+#root.iconbitmap('./pokeball.ico')
 
 # Return values from UI
 pokemon = tk.StringVar()
