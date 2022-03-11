@@ -113,8 +113,6 @@ gen6Yield = {}
 gen7Yield = {}
 
 def genOne():
-    for i in gen3Yield.keys():
-        print(i)
     return 0
 
 def genTwo():
