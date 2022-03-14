@@ -9,6 +9,45 @@ def levelChanged(event):
     L = level.get()
     msg = f"Opponent's Level: {L}"
     levelDisplay.config(text = msg)
+
+
+def updateGen():
+    global currentDict
+    if generation.get() == 1:
+        gen1Names = []
+        for key in gen1Yield.keys():
+            gen1Names.append(key.capitalize())
+        pokemonBox['values'] = [gen1Names[i] for i in range(0, len(gen1Names))]
+        pokemonBox['state'] = 'readonly'
+        pokemonBox.pack()
+        currentDict = gen1Yield
+    elif generation.get() == 2:
+        gen2Names = []
+        for key in gen2Yield.keys():
+            gen2Names.append(key.capitalize())
+        pokemonBox['values'] = [gen2Names[i] for i in range(0, len(gen2Names))]
+        pokemonBox['state'] = 'readonly'
+        pokemonBox.pack()
+        currentDict = gen2Yield
+    elif generation.get() == 3:
+        gen3Names = []
+        for key in gen3Yield.keys():
+            gen3Names.append(key.capitalize())
+        pokemonBox['values'] = [gen3Names[i] for i in range(0, len(gen3Names))]
+        pokemonBox['state'] = 'readonly'
+        pokemonBox.pack()
+        currentDict = gen3Yield
+    elif generation.get() == 4:
+        gen4Names = []
+        for key in gen4Yield.keys():
+            gen4Names.append(key.capitalize())
+        pokemonBox['values'] = [gen4Names[i] for i in range(0, len(gen4Names))]
+        pokemonBox['state'] = 'readonly'
+        pokemonBox.pack()
+        currentDict = gen4Yield
+    else:
+        pass
+
 # Enabes/Disables EXP Share field on check/uncheck of EXP Share checkbox
 def shareNumberUpdate():
     global shareGate
@@ -20,8 +59,10 @@ def shareNumberUpdate():
         shareNumber.config(state = tk.DISABLED, values = (0))
         holdingShare.set(0)
         shareGate = tk.DISABLED
+            
 # EXP calculation for pokemon on field
-def gen3Main():
+def ItoIVandVIMain():
+    global currentDict
     if trainer.get() == 1:
         a = 1.5
     else:
@@ -46,11 +87,12 @@ def gen3Main():
 
     L = level.get()
 
-    b = gen3Yield[pokemon.get().lower()]
+    b = currentDict[pokemon.get().lower()]
 
     return(floor((a*t*b*e*L)/(7*s)))
 # EXP calculation for pokemon in party holding EXP Share
-def gen3Shared():
+def ItoIVandVIShared():
+    global currentDict
     if trainer.get() == 1:
         a = 1.5
     else:
@@ -73,20 +115,24 @@ def gen3Shared():
 
     L = level.get()
 
-    b = gen3Yield[pokemon.get().lower()]
+    b = currentDict[pokemon.get().lower()]
 
     return(floor((a*t*b*e*L)/(7*s)))
 # Calls calculation functions, and updates output
 def go():
-    if expShare.get():
-        exp = gen3Main()
-        shared = gen3Shared()
-        msg = f'Main EXP Points Gained: {exp}, Shared EXP Points Gained: {shared}'
-        resultLabel.config(text = msg)
+    if generation.get() == 1 or 2 or 3 or 4:
+        if expShare.get():
+            exp = ItoIVandVIMain()
+            shared = ItoIVandVIShared()
+            msg = f'Main EXP Points Gained: {exp}, Shared EXP Points Gained: {shared}'
+            resultLabel.config(text = msg)
+        else:
+            exp = ItoIVandVIMain()
+            msg = msg = f'EXP Points Gained: {exp}'
+            resultLabel.config(text = msg)
     else:
-        exp = gen3Main()
-        msg = msg = f'Main EXP Points Gained: {exp}'
-        resultLabel.config(text = msg)
+        resultLabel.config(text = "Not yet implemented")
+        
 
 # EXP yields by generation
 gen1Yield = {'bulbasaur': 64, 'ivysaur': 141, 'venusaur': 208, 'charmander': 65,
@@ -226,6 +272,8 @@ gen4Update = {'turtwig': 64, 'grotle': 141, 'torterra': 208, 'chimchar': 65,
              'armaldo': 99}
 gen4Yield = gen3Yield | gen4Update
 
+# Globals
+currentDict = gen3Yield
 # Create main window
 root = tk.Tk()
 root.title("EXP Calculator")
@@ -304,7 +352,8 @@ for gen in generations:
         generationFrame,
         text = gen[0],
         value = gen[1],
-        variable = generation)
+        variable = generation,
+        command = updateGen)
     r.grid(column = i, row = 0, padx = 5, pady = 5)
     i += 1
 
