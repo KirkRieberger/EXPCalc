@@ -218,12 +218,12 @@ def genSeven():
 
 run = 1
 while run:
-    # print("Generation 3 experience points gained: ", genThree(), "\n")
-    # again = input('Again?(y/n): ').lower()
-    # if again == 'n':
-        # exit(0)
+    print("Generation 3 experience points gained: ", genThree(), "\n")
+    again = input('Again?(y/n): ').lower()
+    if again == 'n':
+        exit(0)
     #genOne()
-    genSeven()
+    #genSeven()
     break
 
 def getMax():
