@@ -48,6 +48,7 @@ def updateGen():
     else:
         pass
 
+
 # Enabes/Disables EXP Share field on check/uncheck of EXP Share checkbox
 def shareNumberUpdate():
     global shareGate
@@ -59,7 +60,8 @@ def shareNumberUpdate():
         shareNumber.config(state = tk.DISABLED, values = (0))
         holdingShare.set(0)
         shareGate = tk.DISABLED
-            
+      
+      
 # EXP calculation for pokemon on field
 def ItoIVandVIMain():
     global currentDict
@@ -90,6 +92,8 @@ def ItoIVandVIMain():
     b = currentDict[pokemon.get().lower()]
 
     return(floor((a*t*b*e*L)/(7*s)))
+
+
 # EXP calculation for pokemon in party holding EXP Share
 def ItoIVandVIShared():
     global currentDict
@@ -118,9 +122,11 @@ def ItoIVandVIShared():
     b = currentDict[pokemon.get().lower()]
 
     return(floor((a*t*b*e*L)/(7*s)))
+
+
 # Calls calculation functions, and updates output
 def go():
-    if generation.get() == 1 or 2 or 3 or 4:
+    if generation.get() == 1 or generation.get() == 2 or generation.get() == 3 or generation.get() == 4:
         if expShare.get():
             exp = ItoIVandVIMain()
             shared = ItoIVandVIShared()
@@ -274,11 +280,12 @@ gen4Yield = gen3Yield | gen4Update
 
 # Globals
 currentDict = gen3Yield
+
 # Create main window
 root = tk.Tk()
 root.title("EXP Calculator")
 root.resizable(False, False)
-#root.iconbitmap('./pokeball.ico')
+root.iconbitmap('./assets/pokeball.ico')
 
 # Return values from UI
 pokemon = tk.StringVar()
@@ -289,6 +296,7 @@ trainer = tk.BooleanVar()
 egg = tk.BooleanVar()
 
 ot = tk.BooleanVar()
+ot.set(True)
 
 expShare = tk.BooleanVar()
 
@@ -337,7 +345,7 @@ defeatedFrame = ttk.Frame(opponentLabelFrame)
 defeatedFrame.pack(padx = 10, pady = 10, fill = "x")
 
 checkboxFrame = ttk.Frame(yourLabelFrame)
-checkboxFrame.pack(padx = 10, pady = 10, fill = "x")
+checkboxFrame.pack(padx = 10, pady = 10)
 
 numberFrame = ttk.Frame(yourLabelFrame)
 numberFrame.pack(padx = 10, pady = 10)
@@ -412,6 +420,7 @@ ttk.Checkbutton(checkboxFrame,
                 command = shareNumberUpdate
 ).grid(column = 3, row = 0)
 
+# Number Frame
 numberLabel = ttk.Label(numberFrame, text = "Number that battled: ")
 numberLabel.pack(side = 'left')
 
@@ -437,7 +446,7 @@ shareNumber = ttk.Spinbox(numberFrame,
                             state = shareGate)
 shareNumber.pack(side = 'left')
 
-# bottom frame
+# Bottom frame
 goButton = ttk.Button(bottomFrame, text="Go", command=go)
 goButton.pack()
 
