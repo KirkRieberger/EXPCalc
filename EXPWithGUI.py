@@ -285,7 +285,7 @@ currentDict = gen3Yield
 root = tk.Tk()
 root.title("EXP Calculator")
 root.resizable(False, False)
-root.iconbitmap('./assets/pokeball.ico')
+root.iconbitmap('./pokeball.ico')
 
 # Return values from UI
 pokemon = tk.StringVar()
@@ -431,6 +431,7 @@ pokemonNumber = ttk.Spinbox(numberFrame,
                             textvariable = number,
                             wrap = True,
                             width = 3)
+pokemonNumber['state'] = 'readonly'
 pokemonNumber.pack(side = 'left')
 
 shareLabel = ttk.Label(numberFrame, text = "Number that held exp share: ")
@@ -444,6 +445,7 @@ shareNumber = ttk.Spinbox(numberFrame,
                             wrap = True,
                             width = 3,
                             state = shareGate)
+shareNumber['state'] = 'readonly'
 shareNumber.pack(side = 'left')
 
 # Bottom frame
