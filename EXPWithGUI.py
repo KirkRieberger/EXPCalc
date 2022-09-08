@@ -46,6 +46,14 @@ def updateGen():
         pokemonBox['state'] = 'readonly'
         pokemonBox.pack()
         currentDict = gen4Yield
+    elif generation.get() == 5:
+        gen5Names = []
+        for key in gen4Yield.keys():
+            gen5Names.append(key.capitalize())
+        pokemonBox['values'] = [gen5Names[i] for i in range(0, len(gen5Names))]
+        pokemonBox['state'] = 'readonly'
+        pokemonBox.pack()
+        currentDict = gen4Yield
     else:
         pass
 
@@ -125,6 +133,40 @@ def ItoIVandVIShared():
     return(floor((a*t*b*e*L)/(7*s)))
 
 
+def genVmain():
+    
+    global currentDict
+    if trainer.get() == 1:
+        a = 1.5
+    else:
+        a = 1
+
+    if egg.get() == 1:
+        e = 1.5
+    else:
+        e = 1
+
+    if ot.get():
+        t = 1
+    else:
+        t = 1.5
+
+    if expShare.get():
+        s = 2
+    else:
+        s = 1
+
+    L = level.get()
+
+    b = currentDict[pokemon.get().lower()]
+    
+    Lp = ownLevel.get()
+    print(a, ' ', e, ' ', t, ' ', s, ' ')
+    exp = ((b*L)/(5*s)*((2*L + 10)/(L + Lp + 10))**2.5 + 1)*t*e*a
+    
+    return(floor(exp))
+
+
 # Calls calculation functions, and updates output
 def go():
     if (generation.get() == 1 or generation.get() == 2 or generation.get() == 3
@@ -136,8 +178,14 @@ def go():
             resultLabel.config(text=msg)
         else:
             exp = ItoIVandVIMain()
-            msg = msg = f'EXP Points Gained: {exp}'
+            msg = f'EXP Points Gained: {exp}'
             resultLabel.config(text=msg)
+    
+    elif (generation.get() == 5):
+        exp = genVmain()
+        msg = f'EXP Points Gained: {exp}'
+        resultLabel.config(text=msg)
+    
     else:
         resultLabel.config(text="Not yet implemented")
 
@@ -279,6 +327,71 @@ gen4Update = {'turtwig': 64, 'grotle': 141, 'torterra': 208, 'chimchar': 65,
               'dustox': 161, 'lileep': 99, 'cradily': 199, 'anorith': 99,
               'armaldo': 99}
 gen4Yield = gen3Yield | gen4Update
+gen5Yield = {'bulbasaur': 64, 'ivysaur': 142, 'venusaur': 236, 'charmander': 62,
+             'charmeleon': 142, 'charizard': 240, 'sqirtle': 63,
+             'wartortle': 142, 'blastoise': 239, 'caterpie': 39, 'metapod': 72,
+             'butterfree': 173, 'weedle': 39, 'kakuna': 72, 'beedrill': 173,
+             'pidgey': 50, 'pidgeotto': 122, 'pidgeot': 211, 'rattata': 51,
+             'raticate': 145, 'spearow': 52, 'fearow': 155, 'ekans': 58,
+             'arbok': 153, 'pikachu': 105, 'raichu': 214, 'sandshrew': 60,
+             'sandslash': 159, 'nidoran♀': 55, 'nidorina': 128,
+             'nidoqueen': 223, 'nidoran♂': 55, 'nidorino': 128, 'nidoking': 223,
+             'clefairy': 113, 'clefable': 213, 'vulpix': 60, 'ninetails': 177,
+             'jigglypuff': 95, 'wigglytuff': 191, 'zubat': 49, 'golbat': 159,
+             'oddish': 64, 'gloom': 138, 'vileplume': 216, 'paras': 57,
+             'parasect': 142, 'venonat': 61, 'venomoth': 158, 'diglett': 53,
+             'dugtrio': 142, 'meowth': 58, 'persian': 154, 'psyduck': 64,
+             'golduck': 175, 'mankey': 61, 'primeape': 159, 'growlithe': 70,
+             'arcanine': 194, 'poliwag': 60, 'poliwhirl': 135, 'poliwrath': 225,
+             'abra': 62, 'kadabra': 140, 'alakazam': 221, 'machop': 61,
+             'machoke': 142, 'machamp': 227, 'bellsprout': 60,
+             'weepinbell': 137, 'victreebel': 216, 'tentacool': 67,
+             'tentacruel': 180, 'geodude': 60, 'graveler': 137, 'golem': 218,
+             'ponyta': 82, 'rapidash': 175, 'slowpoke': 63, 'slowbro': 172,
+             'magnemite': 65, 'magneton': 163, "farfetch'd": 123, 'doduo': 62,
+             'dodrio': 161, 'seel': 65, 'dewgong': 166, 'grimer': 65,
+             'muk': 175, 'shellder': 61, 'cloyster': 184, 'gastly': 62,
+             'haunter': 142, 'gengar': 225, 'onix': 77, 'drowzee': 66,
+             'hypno': 169, 'krabby': 65, 'kingler': 166, 'voltorb': 66,
+             'electrode': 168, 'exeggcute': 65, 'exeggutor': 182, 'cubone': 64,
+             'marowak': 149, 'hitmonlee': 159, 'hitmonchan': 159,
+             'lickitung': 77, 'koffing': 68, 'weezing': 172, 'rhyhorn': 69,
+             'rhydon': 170, 'chansey': 395, 'tangela': 87, 'kangaskhan': 172,
+             'horsea': 59, 'seadra': 154, 'goldeen': 64, 'seaking': 158,
+             'staryu': 68, 'starmie': 182, 'mr. mime': 161, 'scyther': 100,
+             'jynx': 159, 'electabuzz': 172, 'magmar': 173, 'pinsir': 175,
+             'tauros': 172, 'magikarp': 40, 'gyarados': 189, 'lapras': 187,
+             'ditto': 101, 'eevee': 65, 'vaporeon': 184, 'jolteon': 184,
+             'flareon': 184, 'porygon': 79, 'omanyte': 71, 'lord helix': 71,
+             'omastar': 173, 'kabuto': 71, 'kabutops': 173, 'aerodactyl': 180,
+             'snorlax': 189, 'articuno': 261, 'zapdos': 261, 'moltres': 261,
+             'dratini': 60, 'dragonair': 147, 'dragonite': 270, 'mewtwo': 306,
+             'mew': 270, 'chikorita': 64, 'bayleef': 142, 'meganium': 236,
+             'cyndaquil': 62, 'quilava': 142, 'typhlosion': 240, 'totodile': 63,
+             'croconaw': 142, 'feraligatr': 239, 'sentret': 43, 'furret': 145,
+             'hoothoot': 52, 'noctowl': 155, 'ledyba': 53, 'ledian': 137,
+             'spinarak': 50, 'ariados': 137, 'crobat': 241, 'chinchou': 66,
+             'lanturn': 161, 'pichu': 41, 'cleffa': 44, 'igglybuff': 42,
+             'togepi': 49, 'togetic': 142, 'natu': 64, 'xatu': 165,
+             'mareep': 56, 'flaaffy': 128, 'ampharos': 225, 'bellossom': 216,
+             'marill': 88, 'azumarill': 185, 'sudowoodo': 144, 'politoed': 225,
+             'hoppip': 50, 'skiploom': 119, 'jumpluff': 203, 'aipom': 72,
+             'sunkern': 36, 'sunflora': 149, 'yanma': 78, 'wooper': 42,
+             'quagsire': 151, 'espeon': 184, 'umbreon': 184, 'murkrow': 81,
+             'slowking': 172, 'misdreavus': 87, 'unown': 118, 'wobbuffet': 142,
+             'girafarig': 159, 'pineco': 58, 'forretress': 163, 'dunsparce': 145,
+             'gligar': 86, 'steelix': 179, 'snubbull': 60, 'granbull': 158,
+             'quilfish': 158, 'scizor': 175, 'shuckle': 177, 'heracross': 175,
+             'sneasel': 86, 'teddiursa': 66, 'ursaring': 175, 'slugma': 50,
+             'magcargo': 144, 'swinub': 50, 'piloswine': 158, 'corsola': 133,
+             'remoraid': 60, 'octillery': 168, 'delibird': 116, 'mantine': 163,
+             'skarmory': 163, 'houndour': 66, 'houndoom': 175, 'kingdra': 243,
+             'phanpy': 66, 'donphan': 175, 'porygon2': 180, 'stantler': 163,
+             'smeargle': 88, 'tyrogue': 42, 'hitmontop': 159, 'smoochum': 61,
+             'elekid': 72, 'magby': 73, 'miltank': 172, 'blissey': 608,
+             'raikou': 261, 'entei': 261, 'suicune': 261, 'larvitar': 60,
+             'pupitar': 144, 'tyranitar': 270, 'lugia':306, 'ho-oh': 306,
+             'celebi': 270}
 
 # Globals
 currentDict = gen3Yield
@@ -326,6 +439,9 @@ generations = (('Gen 1', 1),
                ('Gen 7', 7),
                ('Gen 8', 8),
                ('Gen 9', 9))
+
+ownLevel = tk.IntVar()
+ownLevel.set(50)
 
 # Create container frames
 generationLabelFrame = ttk.LabelFrame(root, text="Generation")
@@ -449,6 +565,19 @@ shareNumber = ttk.Spinbox(numberFrame,
                           state=shareGate)
 shareNumber['state'] = 'readonly'
 shareNumber.pack(side='left')
+
+levelLabel = ttk.Label(numberFrame, text="Level of your Pokemon: ")
+levelLabel.pack(side='left')
+
+pokemonLevel = ttk.Spinbox(numberFrame,
+                           from_=1,
+                           to=100,
+                           textvariable=ownLevel,
+                           wrap=False,
+                           width=3)
+
+pokemonLevel['state'] = 'readonly'
+pokemonLevel.pack(side='left')
 
 # Bottom frame
 goButton = ttk.Button(bottomFrame, text="Go", command=go)
