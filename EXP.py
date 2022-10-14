@@ -215,18 +215,36 @@ def genSeven():
     print(len(gen3Update))
     return 0
 
+def makeNames():
+    out = open("XMLNameFormat.txt", "w", encoding="utf-8")
+    keysList = gen4Yield.keys()
+    for key in keysList:
+        out.write('<item>"' + key.capitalize() + '"</item>\n')
+    out.close()
+    
+def makeHashMap():
+    out = open("JavaHashMap.txt", "w", encoding="utf-8")
+    keysList = gen4Yield.keys()
+    for item in keysList:
+        out.write('gen1_4Values.put("' + item + '", ' + str(gen4Yield.get(item)) + ');\n')
+    out.close()
+
 
 run = 1
 while run:
-    print("Generation 3 experience points gained: ", genThree(), "\n")
-    again = input('Again?(y/n): ').lower()
-    if again == 'n':
-        exit(0)
+    #print("Generation 3 experience points gained: ", genThree(), "\n")
+    #again = input('Again?(y/n): ').lower()
+    #if again == 'n':
+    #    exit(0)
     #genOne()
     #genSeven()
+    makeHashMap()
+    makeNames()
+    exit(0)
     break
 
 def getMax():
 # Print key with highest value
     allValues = gen3Yield.values()
     print(max(gen3Yield, key=gen3Yield.get), max(allValues))
+    
