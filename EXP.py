@@ -139,7 +139,173 @@ gen4Update = {'turtwig': 64, 'grotle': 141, 'torterra': 208, 'chimchar': 65,
              'dunsparce': 125, 'silcoon': 72, 'dustox': 161, 'lileep': 99,
              'cradily': 199, 'anorith': 99, 'armaldo': 99}
 gen4Yield = gen3Yield | gen4Update
-gen5Yield = {}
+gen5Yield = {'bulbasaur': 64, 'ivysaur': 142, 'venusaur': 236, 'charmander': 62,
+             'charmeleon': 142, 'charizard': 240, 'sqirtle': 63,
+             'wartortle': 142, 'blastoise': 239, 'caterpie': 39, 'metapod': 72,
+             'butterfree': 173, 'weedle': 39, 'kakuna': 72, 'beedrill': 173,
+             'pidgey': 50, 'pidgeotto': 122, 'pidgeot': 211, 'rattata': 51,
+             'raticate': 145, 'spearow': 52, 'fearow': 155, 'ekans': 58,
+             'arbok': 153, 'pikachu': 105, 'raichu': 214, 'sandshrew': 60,
+             'sandslash': 159, 'nidoran♀': 55, 'nidorina': 128,
+             'nidoqueen': 223, 'nidoran♂': 55, 'nidorino': 128, 'nidoking': 223,
+             'clefairy': 113, 'clefable': 213, 'vulpix': 60, 'ninetails': 177,
+             'jigglypuff': 95, 'wigglytuff': 191, 'zubat': 49, 'golbat': 159,
+             'oddish': 64, 'gloom': 138, 'vileplume': 216, 'paras': 57,
+             'parasect': 142, 'venonat': 61, 'venomoth': 158, 'diglett': 53,
+             'dugtrio': 142, 'meowth': 58, 'persian': 154, 'psyduck': 64,
+             'golduck': 175, 'mankey': 61, 'primeape': 159, 'growlithe': 70,
+             'arcanine': 194, 'poliwag': 60, 'poliwhirl': 135, 'poliwrath': 225,
+             'abra': 62, 'kadabra': 140, 'alakazam': 221, 'machop': 61,
+             'machoke': 142, 'machamp': 227, 'bellsprout': 60,
+             'weepinbell': 137, 'victreebel': 216, 'tentacool': 67,
+             'tentacruel': 180, 'geodude': 60, 'graveler': 137, 'golem': 218,
+             'ponyta': 82, 'rapidash': 175, 'slowpoke': 63, 'slowbro': 172,
+             'magnemite': 65, 'magneton': 163, "farfetch'd": 123, 'doduo': 62,
+             'dodrio': 161, 'seel': 65, 'dewgong': 166, 'grimer': 65,
+             'muk': 175, 'shellder': 61, 'cloyster': 184, 'gastly': 62,
+             'haunter': 142, 'gengar': 225, 'onix': 77, 'drowzee': 66,
+             'hypno': 169, 'krabby': 65, 'kingler': 166, 'voltorb': 66,
+             'electrode': 168, 'exeggcute': 65, 'exeggutor': 182, 'cubone': 64,
+             'marowak': 149, 'hitmonlee': 159, 'hitmonchan': 159,
+             'lickitung': 77, 'koffing': 68, 'weezing': 172, 'rhyhorn': 69,
+             'rhydon': 170, 'chansey': 395, 'tangela': 87, 'kangaskhan': 172,
+             'horsea': 59, 'seadra': 154, 'goldeen': 64, 'seaking': 158,
+             'staryu': 68, 'starmie': 182, 'mr. mime': 161, 'scyther': 100,
+             'jynx': 159, 'electabuzz': 172, 'magmar': 173, 'pinsir': 175,
+             'tauros': 172, 'magikarp': 40, 'gyarados': 189, 'lapras': 187,
+             'ditto': 101, 'eevee': 65, 'vaporeon': 184, 'jolteon': 184,
+             'flareon': 184, 'porygon': 79, 'omanyte': 71, 'lord helix': 71,
+             'omastar': 173, 'kabuto': 71, 'kabutops': 173, 'aerodactyl': 180,
+             'snorlax': 189, 'articuno': 261, 'zapdos': 261, 'moltres': 261,
+             'dratini': 60, 'dragonair': 147, 'dragonite': 270, 'mewtwo': 306,
+             'mew': 270, 'chikorita': 64, 'bayleef': 142, 'meganium': 236,
+             'cyndaquil': 62, 'quilava': 142, 'typhlosion': 240, 'totodile': 63,
+             'croconaw': 142, 'feraligatr': 239, 'sentret': 43, 'furret': 145,
+             'hoothoot': 52, 'noctowl': 155, 'ledyba': 53, 'ledian': 137,
+             'spinarak': 50, 'ariados': 137, 'crobat': 241, 'chinchou': 66,
+             'lanturn': 161, 'pichu': 41, 'cleffa': 44, 'igglybuff': 42,
+             'togepi': 49, 'togetic': 142, 'natu': 64, 'xatu': 165,
+             'mareep': 56, 'flaaffy': 128, 'ampharos': 225, 'bellossom': 216,
+             'marill': 88, 'azumarill': 185, 'sudowoodo': 144, 'politoed': 225,
+             'hoppip': 50, 'skiploom': 119, 'jumpluff': 203, 'aipom': 72,
+             'sunkern': 36, 'sunflora': 149, 'yanma': 78, 'wooper': 42,
+             'quagsire': 151, 'espeon': 184, 'umbreon': 184, 'murkrow': 81,
+             'slowking': 172, 'misdreavus': 87, 'unown': 118, 'wobbuffet': 142,
+             'girafarig': 159, 'pineco': 58, 'forretress': 163,
+             'dunsparce': 145, 'gligar': 86, 'steelix': 179, 'snubbull': 60,
+             'granbull': 158, 'quilfish': 158, 'scizor': 175, 'shuckle': 177,
+             'heracross': 175, 'sneasel': 86, 'teddiursa': 66, 'ursaring': 175,
+             'slugma': 50, 'magcargo': 144, 'swinub': 50, 'piloswine': 158,
+             'corsola': 133, 'remoraid': 60, 'octillery': 168, 'delibird': 116,
+             'mantine': 163, 'skarmory': 163, 'houndour': 66, 'houndoom': 175,
+             'kingdra': 243, 'phanpy': 66, 'donphan': 175, 'porygon2': 180,
+             'stantler': 163, 'smeargle': 88, 'tyrogue': 42, 'hitmontop': 159,
+             'smoochum': 61, 'elekid': 72, 'magby': 73, 'miltank': 172,
+             'blissey': 608, 'raikou': 261, 'entei': 261, 'suicune': 261,
+             'larvitar': 60, 'pupitar': 144, 'tyranitar': 270, 'lugia':306,
+             'ho-oh': 306, 'celebi': 270, 'treeko': 62, 'grovyle': 142,
+             'sceptile': 239, 'torchic': 62, 'combusken': 142, 'blaziken': 239,
+             'mudkip': 62, 'marshtomp': 142, 'swampert': 241, 'poochyena': 44,
+             'mightyena': 147, 'zigzagoon': 48, 'linoone': 147, 'wurmple': 39,
+             'silcoon': 72, 'beautifly': 173, 'cascoon': 41, 'dustox': 135,
+             'lotad': 44, 'lombre': 119, 'ludicolo': 216, 'seedot': 44,
+             'nuzleaf': 119, 'shiftry': 216, 'taillow': 54, 'swellow': 151,
+             'wingull': 54, 'pelipper': 151, 'ralts': 40, 'kirlia': 97,
+             'gardevoir': 233, 'surskit': 54, 'masquerain': 145,
+             'shroomish': 59, 'breloom': 161, 'slakoth': 56, 'vigoroth': 154,
+             'slaking': 252, 'nincada': 53, 'ninjask': 160, 'shedinja': 83,
+             'whismur': 48, 'loudred': 126, 'exploud': 216, 'makuhita': 47,
+             'hariyama': 166, 'azurill': 38, 'nosepass': 75, 'skitty': 52,
+             'delcatty': 133, 'sableye': 133, 'mawile': 133, 'aron': 66,
+             'lairon': 151, 'aggron': 239, 'meditite': 56, 'medicham': 144,
+             'electrike': 59, 'manectric': 166, 'plusle': 142, 'minun': 142,
+             'volbeat': 140, 'illumise': 140, 'roselia': 140, 'gulpin': 60,
+             'swalot': 163, 'carvanha': 61, 'sharpedo': 161, 'wailmer': 80,
+             'wailord': 175, 'numel': 61, 'camerupt': 161, 'torkoal': 165,
+             'spoink': 66, 'grumpig': 165, 'spinda': 126, 'trapinch': 58,
+             'vibrava': 119, 'flygon': 234, 'cacnea': 67, 'cacturne': 166,
+             'swablu': 62, 'altaria': 172, 'zangoose': 160, 'seviper': 160,
+             'lunatone': 154, 'solrock': 154, 'barboach': 58, 'whishcash': 164,
+             'corphish': 62, 'crawdaunt': 164, 'baltoy': 60, 'claydol': 175,
+             'lileep': 71, 'cradily': 173, 'anorith': 71, 'armaldo': 173,
+             'feebas': 40, 'milotic': 189, 'castform': 147, 'kecleon': 154,
+             'shuppet': 59, 'banette': 159, 'duskull': 59, 'dusclops': 159,
+             'tropius': 161, 'chimecho': 149, 'absol': 163, 'wynaut': 52,
+             'snorunt': 60, 'glalie': 168, 'spheal': 58, 'sealeo': 144,
+             'walrein': 239, 'clamperl': 69, 'huntail': 170, 'gorebyss': 170,
+             'relicanth': 170, 'luvdisc': 116, 'bagon': 60, 'shelgon': 147,
+             'salamence': 270, 'beldum': 60, 'metang': 147, 'metagross': 270,
+             'regirock': 261, 'regice': 261, 'registeel': 261, 'latias': 270,
+             'latios': 270, 'kyogre': 302, 'groudon': 302, 'rayquaza': 306,
+             'jirachi': 270, 'deoxys': 270, 'turtwig': 64, 'grotle': 142, 
+             'torterra': 236, 'chimchar': 62, 'monferno': 142, 'infernape': 240,
+             'piplup': 63, 'prinplup': 142, 'empoleon': 239, 'starly': 49,
+             'staravia': 119, 'staraptor': 214, 'bidoof': 50, 'bibarel': 144,
+             'kricketot': 39, 'kricketune': 134, 'shinx': 53, 'luxio': 127,
+             'luxray': 235, 'budew': 56, 'roserade': 227, 'cranidos': 70,
+             'rampardos': 173, 'shieldon': 70, 'bastiodon': 173, 'burmy': 45,
+             'wormadam': 148, 'mothim': 148, 'combee': 49, 'vespiquen': 166,
+             'patchirisu': 142, 'buizel': 66, 'floatzel': 173, 'cherubi': 55,
+             'cherrim': 158, 'shellos': 65, 'gastrodon': 166, 'ambipom': 169,
+             'drifloon': 70, 'drifblim': 174, 'buneary': 70, 'lopunny': 168,
+             'mismagius': 173, 'honchkrow': 177, 'glameow': 62, 'purugly': 158,
+             'chingling': 57, 'stunky': 66, 'skuntank': 168, 'bronor': 60,
+             'bronzong': 175, 'bonsly': 58, 'mime jr.': 62, 'happiny': 110,
+             'chatot': 144, 'spiritomb': 170, 'gible': 60, 'gabite': 144,
+             'garchomp': 270, 'munchlax': 78, 'riolu': 57, 'lucario': 184,
+             'hippopotas': 66, 'hippowdon': 184, 'skorupi': 66, 'drapion': 175,
+             'croagunk': 60, 'toxicroak': 172, 'carnivine': 159, 'finneon': 66,
+             'lumineon': 161, 'mantyke': 69, 'snover': 67, 'abomasnow': 173,
+             'weavile': 179, 'magnezone': 241, 'lickilicky': 180,
+             'rhyperior': 241, 'tangrowth': 187, 'electivire': 243,
+             'magmortar': 243, 'togekiss': 245, 'yanmega': 180, 'leafeon': 184,
+             'glaceon': 184, 'gliscor': 179, 'mamoswine': 239, 'porygon-z': 241,
+             'gallade': 233, 'probopass': 184, 'dusknoir': 236, 'froslass': 168,
+             'rotom': 154, 'uxie': 261, 'mespirit': 261, 'azelf': 261,
+             'dialga': 306, 'palkia': 306, 'heatran': 270, 'regigigas': 302,
+             'giratina': 306, 'cresselia': 270, 'phione': 216, 'manaphy': 270,
+             'darkrai': 270, 'shaymin': 270, 'arceus': 324, 'victini': 270,
+             'snivy': 62, 'servine': 145, 'serperior': 238, 'tepig': 62,
+             'pignite': 146, 'emboar': 238, 'oshawott': 62, 'dewott': 145,
+             'samurott': 238, 'patrat': 51, 'watchog': 147, 'lillipup': 55,
+             'herdier': 130, 'stoutland': 211, 'purrloin': 56, 'liepard': 156,
+             'pansage': 63, 'simisage': 174, 'pansear': 63, 'simisear': 174,
+             'panpour': 63, 'simipour': 174, 'munna': 58, 'musharna': 170,
+             'pidove': 53, 'tranquill': 125, 'unfezant': 215, 'blitzle': 59,
+             'zebstrika': 174, 'roggenrola': 56, 'boldore': 137,
+             'gigalith': 227, 'woobat': 63, 'swoobat': 149, 'drilbur': 66,
+             'excadrill': 178, 'audino': 390, 'timburr': 61, 'gurdurr': 142,
+             'conkeldurr': 227, 'tympole': 59, 'palpitoad': 134,
+             'seismitoad': 225, 'throh': 163, 'sawk': 163, 'sewaddle': 62,
+             'swadloon': 133, 'leavanny': 221, 'venipede': 52,
+             'whirlipede': 126, 'scolipede': 214, 'cottonee': 56,
+             'whimsicott': 168, 'petilil': 56, 'lilligant': 168,
+             'basculin': 161, 'sandile': 58, 'krokorok': 123, 'krookodile': 229,
+             'darumaka': 63, 'darmanitan': 168, 'maractus': 161, 'dwebble': 65,
+             'crustle': 166, 'scraggy': 70, 'scrafty': 171, 'sigilyph': 172,
+             'yamask': 61, 'cofagrigus': 169, 'tirtouga': 71, 'carracosta': 173,
+             'archen': 71, 'archeops': 177, 'trubbish': 66, 'garbodor': 166,
+             'zorua': 66, 'zoroark': 179, 'minccino': 60, 'cinccino': 165,
+             'gothita': 58, 'gothorita': 137, 'gothitelle': 221, 'solosis': 58,
+             'duosion': 130, 'reuniclus': 221, 'ducklett': 61, 'swanna': 166,
+             'vanillite': 61, 'vanillish': 138, 'vanilluxe': 214,
+             'deerling': 67, 'sawsbuck': 166, 'emolga': 150, 'karrablast': 63,
+             'escavalier': 173, 'foongus': 59, 'amoonguss': 162, 'frillish': 67,
+             'jellicent': 168, 'alomomola': 165, 'joltik': 64,
+             'galvantula': 165, 'ferroseed': 61, 'ferrothorn': 171, 'klink': 60,
+             'klang': 154, 'klinklang': 234, 'tynamo': 55, 'eelektrik': 142,
+             'eelektross': 232, 'elgyem': 67, 'beheeyem': 170, 'litwick': 55,
+             'lampent': 130, 'chandelure': 234, 'axew': 64, 'fraxure': 144,
+             'haxorus': 243, 'cubchoo': 61, 'beartic': 170, 'cryogonal': 170,
+             'shelmet': 61, 'accelgor': 173, 'stunfisk': 165, 'mienfoo': 70,
+             'mienshao': 179, 'druddigon': 170, 'golett': 61, 'golurk': 169, 
+             'pawniard': 68, 'bisharp': 172, 'bouffalant': 172, 'rufflet': 70,
+             'braviary': 179, 'vullaby': 74, 'mandibuzz': 179, 'heatmor': 169,
+             'durant': 169, 'deino': 60, 'zweilous': 147, 'hydreigon': 270,
+             'larvesta': 72, 'volcorona': 248, 'cobalion': 261,
+             'terrakion': 261, 'virizion': 261, 'tornadus': 261,
+             'thundurus': 261, 'reshiram': 306, 'zekrom': 306, 'landorus': 270,
+             'kyurem': 297, 'keldeo': 261, 'meloetta': 270, 'genesect': 270}
 gen6Yield = {}
 gen7Yield = {}
 
@@ -217,16 +383,30 @@ def genSeven():
 
 def makeNames():
     out = open("XMLNameFormat.txt", "w", encoding="utf-8")
-    keysList = gen4Yield.keys()
+    keysList = gen3Yield.keys()
+    for key in keysList:
+        out.write('<item>"' + key.capitalize() + '"</item>\n')
+    out.close()
+    
+def makeGen5Names():
+    out = open("XMLNameFormatGen5.txt", "w", encoding="utf-8")
+    keysList = gen5Yield.keys()
     for key in keysList:
         out.write('<item>"' + key.capitalize() + '"</item>\n')
     out.close()
     
 def makeHashMap():
     out = open("JavaHashMap.txt", "w", encoding="utf-8")
-    keysList = gen4Yield.keys()
+    keysList = gen3Yield.keys()
     for item in keysList:
-        out.write('gen1_4Values.put("' + item + '", ' + str(gen4Yield.get(item)) + ');\n')
+        out.write('gen1_3Values.put("' + item + '", ' + str(gen4Yield.get(item)) + ');\n')
+    out.close()
+    
+def makeHashMapGen5():
+    out = open("JavaHashMapGen5.txt", "w", encoding="utf-8")
+    keysList = gen5Yield.keys()
+    for item in keysList:
+        out.write('gen5Values.put("' + item + '", ' + str(gen5Yield.get(item)) + ');\n')
     out.close()
 
 
@@ -239,7 +419,9 @@ while run:
     #genOne()
     #genSeven()
     makeHashMap()
+    makeHashMapGen5()
     makeNames()
+    makeGen5Names()
     exit(0)
     break
 
