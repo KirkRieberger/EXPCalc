@@ -54,6 +54,14 @@ def updateGen():
         pokemonBox['state'] = 'readonly'
         pokemonBox.pack()
         currentDict = gen5Yield
+    elif generation.get() == 6:
+        gen6Names = []
+        for key in gen6Yield.keys():
+            gen6Names.append(key.capitalize())
+        pokemonBox['values'] = [gen6Names[i] for i in range(0, len(gen6Names))]
+        pokemonBox['state'] = 'readonly'
+        pokemonBox.pack()
+        currentDict = gen6Yield
     else:
         pass
 
@@ -100,7 +108,7 @@ def ItoIVandVIMain():
 
     b = currentDict[pokemon.get().lower()]
 
-    return(floor((a*t*b*e*L)/(7*s)))
+    return (floor((a*t*b*e*L)/(7*s)))
 
 
 # EXP calculation for pokemon in party holding EXP Share
@@ -130,11 +138,11 @@ def ItoIVandVIShared():
 
     b = currentDict[pokemon.get().lower()]
 
-    return(floor((a*t*b*e*L)/(7*s)))
+    return (floor((a*t*b*e*L)/(7*s)))
 
 
 def genVmain():
-    
+
     global currentDict
     if trainer.get() == 1:
         a = 1.5
@@ -159,18 +167,18 @@ def genVmain():
     L = level.get()
 
     b = currentDict[pokemon.get().lower()]
-    
-    Lp = ownLevel.get()
 
+    Lp = ownLevel.get()
+    # print(a, ' ', e, ' ', t, ' ', s, ' ')
     exp = ((b*L)/(5*s)*((2*L + 10)/(L + Lp + 10))**2.5 + 1)*t*e*a
-    
-    return(floor(exp))
+
+    return (floor(exp))
 
 
 # Calls calculation functions, and updates output
 def go():
     if (generation.get() == 1 or generation.get() == 2 or generation.get() == 3
-       or generation.get() == 4):
+       or generation.get() == 4 or generation.get() == 6):
         if expShare.get():
             exp = ItoIVandVIMain()
             shared = ItoIVandVIShared()
@@ -180,12 +188,12 @@ def go():
             exp = ItoIVandVIMain()
             msg = f'EXP Points Gained: {exp}'
             resultLabel.config(text=msg)
-    
+
     elif (generation.get() == 5):
         exp = genVmain()
         msg = f'EXP Points Gained: {exp}'
         resultLabel.config(text=msg)
-    
+
     else:
         resultLabel.config(text="Not yet implemented")
 
@@ -390,7 +398,7 @@ gen5Yield = {'bulbasaur': 64, 'ivysaur': 142, 'venusaur': 236, 'charmander': 62,
              'stantler': 163, 'smeargle': 88, 'tyrogue': 42, 'hitmontop': 159,
              'smoochum': 61, 'elekid': 72, 'magby': 73, 'miltank': 172,
              'blissey': 608, 'raikou': 261, 'entei': 261, 'suicune': 261,
-             'larvitar': 60, 'pupitar': 144, 'tyranitar': 270, 'lugia':306,
+             'larvitar': 60, 'pupitar': 144, 'tyranitar': 270, 'lugia': 306,
              'ho-oh': 306, 'celebi': 270, 'treeko': 62, 'grovyle': 142,
              'sceptile': 239, 'torchic': 62, 'combusken': 142, 'blaziken': 239,
              'mudkip': 62, 'marshtomp': 142, 'swampert': 241, 'poochyena': 44,
@@ -425,7 +433,7 @@ gen5Yield = {'bulbasaur': 64, 'ivysaur': 142, 'venusaur': 236, 'charmander': 62,
              'salamence': 270, 'beldum': 60, 'metang': 147, 'metagross': 270,
              'regirock': 261, 'regice': 261, 'registeel': 261, 'latias': 270,
              'latios': 270, 'kyogre': 302, 'groudon': 302, 'rayquaza': 306,
-             'jirachi': 270, 'deoxys': 270, 'turtwig': 64, 'grotle': 142, 
+             'jirachi': 270, 'deoxys': 270, 'turtwig': 64, 'grotle': 142,
              'torterra': 236, 'chimchar': 62, 'monferno': 142, 'infernape': 240,
              'piplup': 63, 'prinplup': 142, 'empoleon': 239, 'starly': 49,
              'staravia': 119, 'staraptor': 214, 'bidoof': 50, 'bibarel': 144,
@@ -486,7 +494,7 @@ gen5Yield = {'bulbasaur': 64, 'ivysaur': 142, 'venusaur': 236, 'charmander': 62,
              'lampent': 130, 'chandelure': 234, 'axew': 64, 'fraxure': 144,
              'haxorus': 243, 'cubchoo': 61, 'beartic': 170, 'cryogonal': 170,
              'shelmet': 61, 'accelgor': 173, 'stunfisk': 165, 'mienfoo': 70,
-             'mienshao': 179, 'druddigon': 170, 'golett': 61, 'golurk': 169, 
+             'mienshao': 179, 'druddigon': 170, 'golett': 61, 'golurk': 169,
              'pawniard': 68, 'bisharp': 172, 'bouffalant': 172, 'rufflet': 70,
              'braviary': 179, 'vullaby': 74, 'mandibuzz': 179, 'heatmor': 169,
              'durant': 169, 'deino': 60, 'zweilous': 147, 'hydreigon': 270,
@@ -494,6 +502,27 @@ gen5Yield = {'bulbasaur': 64, 'ivysaur': 142, 'venusaur': 236, 'charmander': 62,
              'terrakion': 261, 'virizion': 261, 'tornadus': 261,
              'thundurus': 261, 'reshiram': 306, 'zekrom': 306, 'landorus': 270,
              'kyurem': 297, 'keldeo': 261, 'meloetta': 270, 'genesect': 270}
+gen6Update = {'chespin': 63, 'quilladin': 162, 'chesnaught': 239,
+              'fennekin': 61, 'braixen': 143, 'delphox': 240, 'froakie': 63,
+              'frogadier': 142, 'greninja': 239, 'bunnelby': 47,
+              'diggersby': 148, 'fletchling': 56, 'fletchinder': 134,
+              'talonflame': 175, 'scatterbug': 40, 'spewpa': 75,
+              'vivillon': 185, 'litleo': 74, 'pyroar': 177, 'flabébé': 61,
+              'floette': 130, 'florges': 248, 'skiddo': 70, 'gogoat': 186,
+              'pancham': 70, 'pangoro': 173, 'furfrou': 165, 'espurr': 71,
+              'meowstic': 163, 'honedge': 65, 'doublade': 157, 'aegislash': 234,
+              'spritzee': 68, 'aromatisse': 162, 'swirlix': 68, 'slurpuff': 168,
+              'inkay': 58, 'malamar': 169, 'binacle': 61, 'barbaracle': 175,
+              'skrelp': 64, 'dragalge': 173, 'clauncher': 66, 'clawitzer': 100,
+              'helioptile': 58, 'heliolisk': 168, 'tyrunt': 72,
+              'tyrantrum': 182, 'amaura': 72, 'aurorus': 104, 'sylveon': 184,
+              'hawlucha': 175, 'dedenne': 151, 'carbink': 100, 'goomy': 60,
+              'sliggoo': 158, 'goodra': 270, 'klefki': 165, 'phantump': 62,
+              'trevenant': 166, 'pumpkaboo': 67, 'gourgeist': 173,
+              'bergmite': 61, 'avalugg': 180, 'noibat': 49, 'noivern': 187,
+              'xerneas': 306, 'yveltal': 306, 'zygarde': 270, 'diancie': 270,
+              'hoopa': 270, 'volcanion': 270}
+gen6Yield = gen5Yield | gen6Update
 
 # Globals
 currentDict = gen3Yield

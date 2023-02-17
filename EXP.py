@@ -13,8 +13,8 @@ gen1Yield = {'bulbasaur': 64, 'ivysaur': 141, 'venusaur': 208, 'charmander': 65,
              'raticate': 116, 'spearow': 58, 'fearow': 162, 'ekans': 62,
              'arbok': 147, 'pikachu': 82, 'raichu': 122, 'sandshrew': 93,
              'sandslash': 163, 'nidoran♀': 59, 'nidorina': 117,
-             'nidoqueen': 194, 'nidoran♂': 60, 'nidorino':118, 'nidoking': 195,
-             'clefairy': 68,'clefable': 129, 'vulpix': 63, 'ninetails': 178,
+             'nidoqueen': 194, 'nidoran♂': 60, 'nidorino': 118, 'nidoking': 195,
+             'clefairy': 68, 'clefable': 129, 'vulpix': 63, 'ninetails': 178,
              'jigglypuff': 76, 'wigglytuff': 109, 'zubat': 54, 'golbat': 171,
              'oddish': 78, 'gloom': 132, 'vileplume': 184, 'paras': 70,
              'parasect': 128, 'venonat': 75, 'venomoth': 138, 'diglett': 81,
@@ -46,32 +46,32 @@ gen1Yield = {'bulbasaur': 64, 'ivysaur': 141, 'venusaur': 208, 'charmander': 65,
              'dratini': 67, 'dragonair': 144, 'dragonite': 218, 'mewtwo': 220,
              'mew': 64}
 gen2Update = {'chikorita': 64, 'bayleef': 141, 'meganium': 208, 'cyndaquil': 65,
-             'quilava': 142, 'typhlosion': 209, 'totodile': 66, 'croconaw': 143,
-             'feraligatr': 210, 'sentret': 57, 'furret': 116, 'hoothoot': 58,
-             'noctowl': 162, 'ledyba': 54, 'ledian': 134, 'spinarak': 54,
-             'ariados': 134, 'crobat': 204, 'chinchou': 90, 'lanturn': 156,
-             'pichu': 42, 'cleffa': 37, 'igglybuff': 39, 'togepi': 74,
-             'togetic': 114, 'natu': 73, 'xatu': 171, 'mareep': 59,
-             'flaaffy': 117, 'ampharos': 194, 'bellossom': 184, 'marill': 58,
-             'azumarill': 153, 'sudowoodo': 135, 'politoed': 185, 'hoppip': 74,
-             'skiploom': 136, 'jumpluff': 176, 'aipom': 94, 'sunkern': 52,
-             'sunflora': 146, 'yanma': 147, 'wooper': 52, 'quagsire': 137,
-             'espeon': 197, 'umbreon': 197, 'murkrow': 107, 'slowking': 164,
-             'misdreavus': 147, 'unown': 61, 'wobbuffet': 177, 'girafarig': 149,
-             'pineco': 60, 'forretress': 118, 'dunsparce': 75, 'gligar': 108,
-             'steelix': 196, 'snubbull': 63, 'granbull': 178, 'quilfish': 100,
-             'scizor': 200, 'shuckle': 80, 'heracross': 200, 'sneasel': 132,
-             'teddiursa': 124, 'ursaring': 189, 'slugma': 78, 'magcargo': 154,
-             'swinub': 78, 'piloswine': 160, 'corsola': 113, 'remoraid': 78,
-             'octillery': 164, 'delibird': 183, 'mantine': 168, 'skarmory': 168,
-             'houndour': 114, 'houndoom': 204, 'kingdra': 207, 'phanpy': 124,
-             'donphan': 189, 'porygon2': 180, 'stantler': 165, 'smeargle': 106,
-             'tyrogue': 91, 'hitmontop': 138, 'smoochum': 87, 'elekid': 106,
-             'magby': 117, 'miltank': 200, 'blissey': 255, 'raikou': 216,
-             'entei': 217, 'suicune': 215, 'larvitar': 67, 'pupitar': 114,
-             'tyranitar': 218, 'lugia': 220, 'ho-oh': 220, 'celebi': 64}
+              'quilava': 142, 'typhlosion': 209, 'totodile': 66, 'croconaw': 143,
+              'feraligatr': 210, 'sentret': 57, 'furret': 116, 'hoothoot': 58,
+              'noctowl': 162, 'ledyba': 54, 'ledian': 134, 'spinarak': 54,
+              'ariados': 134, 'crobat': 204, 'chinchou': 90, 'lanturn': 156,
+              'pichu': 42, 'cleffa': 37, 'igglybuff': 39, 'togepi': 74,
+              'togetic': 114, 'natu': 73, 'xatu': 171, 'mareep': 59,
+              'flaaffy': 117, 'ampharos': 194, 'bellossom': 184, 'marill': 58,
+              'azumarill': 153, 'sudowoodo': 135, 'politoed': 185, 'hoppip': 74,
+              'skiploom': 136, 'jumpluff': 176, 'aipom': 94, 'sunkern': 52,
+              'sunflora': 146, 'yanma': 147, 'wooper': 52, 'quagsire': 137,
+              'espeon': 197, 'umbreon': 197, 'murkrow': 107, 'slowking': 164,
+              'misdreavus': 147, 'unown': 61, 'wobbuffet': 177, 'girafarig': 149,
+              'pineco': 60, 'forretress': 118, 'dunsparce': 75, 'gligar': 108,
+              'steelix': 196, 'snubbull': 63, 'granbull': 178, 'quilfish': 100,
+              'scizor': 200, 'shuckle': 80, 'heracross': 200, 'sneasel': 132,
+              'teddiursa': 124, 'ursaring': 189, 'slugma': 78, 'magcargo': 154,
+              'swinub': 78, 'piloswine': 160, 'corsola': 113, 'remoraid': 78,
+              'octillery': 164, 'delibird': 183, 'mantine': 168, 'skarmory': 168,
+              'houndour': 114, 'houndoom': 204, 'kingdra': 207, 'phanpy': 124,
+              'donphan': 189, 'porygon2': 180, 'stantler': 165, 'smeargle': 106,
+              'tyrogue': 91, 'hitmontop': 138, 'smoochum': 87, 'elekid': 106,
+              'magby': 117, 'miltank': 200, 'blissey': 255, 'raikou': 216,
+              'entei': 217, 'suicune': 215, 'larvitar': 67, 'pupitar': 114,
+              'tyranitar': 218, 'lugia': 220, 'ho-oh': 220, 'celebi': 64}
 gen2Yield = gen1Yield | gen2Update
-gen3Update = {'treeko': 65, 'grovyle': 141, 'sceptile': 208, 'torchic': 65, 
+gen3Update = {'treeko': 65, 'grovyle': 141, 'sceptile': 208, 'torchic': 65,
               'combusken': 142, 'blaziken': 209, 'mudkip': 65, 'marshtomp': 143,
               'swampert': 210, 'poochyena': 55, 'mightyena': 128,
               'zigzagoon': 60, 'linoone': 128, 'wurmple': 54, 'silcoon': 71,
@@ -108,36 +108,36 @@ gen3Update = {'treeko': 65, 'grovyle': 141, 'sceptile': 208, 'torchic': 65,
               'jirachi': 215, 'deoxys': 215}
 gen3Yield = gen2Yield | gen3Update
 gen4Update = {'turtwig': 64, 'grotle': 141, 'torterra': 208, 'chimchar': 65,
-             'monferno': 142, 'infernape': 209, 'piplup': 66, 'prinplup': 143,
-             'empoleon': 210, 'starly': 56, 'staravia': 113, 'staraptor': 172,
-             'bidoof': 58, 'bibarel': 116, 'kricketot': 54, 'kricketune': 159,
-             'shinx': 60, 'luxio': 117, 'luxray': 194, 'budew': 68,
-             'roserade': 204, 'cranidos': 99, 'rampardos': 199, 'shieldon': 99,
-             'bastiodon': 199, 'burmy': 61, 'wormadam': 159, 'mothim': 159,
-             'combee': 63, 'vespiquen': 188, 'patchirisu': 120, 'buizel': 75,
-             'floatzel': 178, 'cherubi': 68, 'cherrim': 133, 'shellos': 73,
-             'gastrodon': 176, 'ambipom': 186, 'drifloon': 127, 'drifblim': 204,
-             'buneary': 84, 'lopunny': 178, 'mismagius': 187, 'honchkrow': 187,
-             'glameow': 71, 'purugly': 183, 'chingling': 74, 'stunky': 79,
-             'skuntank': 209, 'bronor': 72, 'bronzong': 188, 'bonsly': 68,
-             'mime jr.': 78, 'happiny': 255, 'chatot': 107, 'spiritomb': 168,
-             'gible': 67, 'gabite': 144, 'garchomp': 218, 'munchlax': 94,
-             'riolu': 72, 'lucario': 204, 'hippopotas': 95, 'hippowdon': 198,
-             'skorupi': 114, 'drapion': 204, 'croagunk': 83, 'toxicroak': 181,
-             'carnivine': 164, 'finneon': 90, 'lumineon': 156, 'mantyke': 108,
-             'snover': 131, 'abomasnow': 214, 'weavile': 199, 'magnezone': 211, 
-             'lickilicky': 193, 'rhyperior': 217, 'tangrowth': 211,
-             'electivire': 199, 'magmortar': 199, 'togekiss': 220,
-             'yanmega': 198, 'leafeon': 196, 'glaceon': 196, 'gliscor': 192,
-             'mamoswine': 207, 'porygon-z': 185, 'gallade': 208,
-             'probopass': 198, 'dusknoir': 210, 'froslass': 187, 'rotom': 132,
-             'uxie': 210, 'mespirit': 210, 'azelf': 210, 'dialga': 220,
-             'palkia': 220, 'heatran': 215, 'regigigas': 220, 'giratina': 220,
-             'cresselia': 210, 'phione': 165, 'manaphy': 215, 'darkrai': 210,
-             'shaymin': 64, 'arceus': 255, 'abra': 75, 'machop': 75,
-             'geodude': 73, 'omanyte': 99, 'kabuto': 99, 'kabutops': 199,
-             'dunsparce': 125, 'silcoon': 72, 'dustox': 161, 'lileep': 99,
-             'cradily': 199, 'anorith': 99, 'armaldo': 99}
+              'monferno': 142, 'infernape': 209, 'piplup': 66, 'prinplup': 143,
+              'empoleon': 210, 'starly': 56, 'staravia': 113, 'staraptor': 172,
+              'bidoof': 58, 'bibarel': 116, 'kricketot': 54, 'kricketune': 159,
+              'shinx': 60, 'luxio': 117, 'luxray': 194, 'budew': 68,
+              'roserade': 204, 'cranidos': 99, 'rampardos': 199, 'shieldon': 99,
+              'bastiodon': 199, 'burmy': 61, 'wormadam': 159, 'mothim': 159,
+              'combee': 63, 'vespiquen': 188, 'patchirisu': 120, 'buizel': 75,
+              'floatzel': 178, 'cherubi': 68, 'cherrim': 133, 'shellos': 73,
+              'gastrodon': 176, 'ambipom': 186, 'drifloon': 127, 'drifblim': 204,
+              'buneary': 84, 'lopunny': 178, 'mismagius': 187, 'honchkrow': 187,
+              'glameow': 71, 'purugly': 183, 'chingling': 74, 'stunky': 79,
+              'skuntank': 209, 'bronor': 72, 'bronzong': 188, 'bonsly': 68,
+              'mime jr.': 78, 'happiny': 255, 'chatot': 107, 'spiritomb': 168,
+              'gible': 67, 'gabite': 144, 'garchomp': 218, 'munchlax': 94,
+              'riolu': 72, 'lucario': 204, 'hippopotas': 95, 'hippowdon': 198,
+              'skorupi': 114, 'drapion': 204, 'croagunk': 83, 'toxicroak': 181,
+              'carnivine': 164, 'finneon': 90, 'lumineon': 156, 'mantyke': 108,
+              'snover': 131, 'abomasnow': 214, 'weavile': 199, 'magnezone': 211,
+              'lickilicky': 193, 'rhyperior': 217, 'tangrowth': 211,
+              'electivire': 199, 'magmortar': 199, 'togekiss': 220,
+              'yanmega': 198, 'leafeon': 196, 'glaceon': 196, 'gliscor': 192,
+              'mamoswine': 207, 'porygon-z': 185, 'gallade': 208,
+              'probopass': 198, 'dusknoir': 210, 'froslass': 187, 'rotom': 132,
+              'uxie': 210, 'mespirit': 210, 'azelf': 210, 'dialga': 220,
+              'palkia': 220, 'heatran': 215, 'regigigas': 220, 'giratina': 220,
+              'cresselia': 210, 'phione': 165, 'manaphy': 215, 'darkrai': 210,
+              'shaymin': 64, 'arceus': 255, 'abra': 75, 'machop': 75,
+              'geodude': 73, 'omanyte': 99, 'kabuto': 99, 'kabutops': 199,
+              'dunsparce': 125, 'silcoon': 72, 'dustox': 161, 'lileep': 99,
+              'cradily': 199, 'anorith': 99, 'armaldo': 99}
 gen4Yield = gen3Yield | gen4Update
 gen5Yield = {'bulbasaur': 64, 'ivysaur': 142, 'venusaur': 236, 'charmander': 62,
              'charmeleon': 142, 'charizard': 240, 'sqirtle': 63,
@@ -202,7 +202,7 @@ gen5Yield = {'bulbasaur': 64, 'ivysaur': 142, 'venusaur': 236, 'charmander': 62,
              'stantler': 163, 'smeargle': 88, 'tyrogue': 42, 'hitmontop': 159,
              'smoochum': 61, 'elekid': 72, 'magby': 73, 'miltank': 172,
              'blissey': 608, 'raikou': 261, 'entei': 261, 'suicune': 261,
-             'larvitar': 60, 'pupitar': 144, 'tyranitar': 270, 'lugia':306,
+             'larvitar': 60, 'pupitar': 144, 'tyranitar': 270, 'lugia': 306,
              'ho-oh': 306, 'celebi': 270, 'treeko': 62, 'grovyle': 142,
              'sceptile': 239, 'torchic': 62, 'combusken': 142, 'blaziken': 239,
              'mudkip': 62, 'marshtomp': 142, 'swampert': 241, 'poochyena': 44,
@@ -237,7 +237,7 @@ gen5Yield = {'bulbasaur': 64, 'ivysaur': 142, 'venusaur': 236, 'charmander': 62,
              'salamence': 270, 'beldum': 60, 'metang': 147, 'metagross': 270,
              'regirock': 261, 'regice': 261, 'registeel': 261, 'latias': 270,
              'latios': 270, 'kyogre': 302, 'groudon': 302, 'rayquaza': 306,
-             'jirachi': 270, 'deoxys': 270, 'turtwig': 64, 'grotle': 142, 
+             'jirachi': 270, 'deoxys': 270, 'turtwig': 64, 'grotle': 142,
              'torterra': 236, 'chimchar': 62, 'monferno': 142, 'infernape': 240,
              'piplup': 63, 'prinplup': 142, 'empoleon': 239, 'starly': 49,
              'staravia': 119, 'staraptor': 214, 'bidoof': 50, 'bibarel': 144,
@@ -298,7 +298,7 @@ gen5Yield = {'bulbasaur': 64, 'ivysaur': 142, 'venusaur': 236, 'charmander': 62,
              'lampent': 130, 'chandelure': 234, 'axew': 64, 'fraxure': 144,
              'haxorus': 243, 'cubchoo': 61, 'beartic': 170, 'cryogonal': 170,
              'shelmet': 61, 'accelgor': 173, 'stunfisk': 165, 'mienfoo': 70,
-             'mienshao': 179, 'druddigon': 170, 'golett': 61, 'golurk': 169, 
+             'mienshao': 179, 'druddigon': 170, 'golett': 61, 'golurk': 169,
              'pawniard': 68, 'bisharp': 172, 'bouffalant': 172, 'rufflet': 70,
              'braviary': 179, 'vullaby': 74, 'mandibuzz': 179, 'heatmor': 169,
              'durant': 169, 'deino': 60, 'zweilous': 147, 'hydreigon': 270,
@@ -306,16 +306,39 @@ gen5Yield = {'bulbasaur': 64, 'ivysaur': 142, 'venusaur': 236, 'charmander': 62,
              'terrakion': 261, 'virizion': 261, 'tornadus': 261,
              'thundurus': 261, 'reshiram': 306, 'zekrom': 306, 'landorus': 270,
              'kyurem': 297, 'keldeo': 261, 'meloetta': 270, 'genesect': 270}
-gen6Yield = {}
+gen6Update = {'chespin': 63, 'quilladin': 162, 'chesnaught': 239,
+              'fennekin': 61, 'braixen': 143, 'delphox': 240, 'froakie': 63,
+              'frogadier': 142, 'greninja': 239, 'bunnelby': 47,
+              'diggersby': 148, 'fletchling': 56, 'fletchinder': 134,
+              'talonflame': 175, 'scatterbug': 40, 'spewpa': 75,
+              'vivillon': 185, 'litleo': 74, 'pyroar': 177, 'flabébé': 61,
+              'floette': 130, 'florges': 248, 'skiddo': 70, 'gogoat': 186,
+              'pancham': 70, 'pangoro': 173, 'furfrou': 165, 'espurr': 71,
+              'meowstic': 163, 'honedge': 65, 'doublade': 157, 'aegislash': 234,
+              'spritzee': 68, 'aromatisse': 162, 'swirlix': 68, 'slurpuff': 168,
+              'inkay': 58, 'malamar': 169, 'binacle': 61, 'barbaracle': 175,
+              'skrelp': 64, 'dragalge': 173, 'clauncher': 66, 'clawitzer': 100,
+              'helioptile': 58, 'heliolisk': 168, 'tyrunt': 72,
+              'tyrantrum': 182, 'amaura': 72, 'aurorus': 104, 'sylveon': 184,
+              'hawlucha': 175, 'dedenne': 151, 'carbink': 100, 'goomy': 60,
+              'sliggoo': 158, 'goodra': 270, 'klefki': 165, 'phantump': 62,
+              'trevenant': 166, 'pumpkaboo': 67, 'gourgeist': 173,
+              'bergmite': 61, 'avalugg': 180, 'noibat': 49, 'noivern': 187,
+              'xerneas': 306, 'yveltal': 306, 'zygarde': 270, 'diancie': 270,
+              'hoopa': 270, 'volcanion': 270}
+gen6Yield = gen5Yield | gen6Update
 gen7Yield = {}
+
 
 def genOne():
     for key in gen4Yield:
         print(key, gen4Yield[key])
     return 0
 
+
 def genTwo():
     return 0
+
 
 def genThree():
     a = input('Was this a trainer battle?(y/n): ').lower()
@@ -368,56 +391,49 @@ def genThree():
 
     return floor(exp)
 
+
 def genFour():
     return 0
+
 
 def genFive():
     return 0
 
+
 def genSix():
     return 0
+
 
 def genSeven():
     print(len(gen3Update))
     return 0
 
+
 def makeNames():
     out = open("XMLNameFormat.txt", "w", encoding="utf-8")
-    keysList = gen3Yield.keys()
+    keysList = gen6Yield.keys()
     for key in keysList:
         out.write('<item>"' + key.capitalize() + '"</item>\n')
     out.close()
-    
-def makeGen5Names():
-    out = open("XMLNameFormatGen5.txt", "w", encoding="utf-8")
-    keysList = gen5Yield.keys()
-    for key in keysList:
-        out.write('<item>"' + key.capitalize() + '"</item>\n')
-    out.close()
-    
+
+
 def makeHashMap():
     out = open("JavaHashMap.txt", "w", encoding="utf-8")
-    keysList = gen3Yield.keys()
+    keysList = gen6Update.keys()
     for item in keysList:
-        out.write('gen1_3Values.put("' + item + '", ' + str(gen4Yield.get(item)) + ');\n')
-    out.close()
-    
-def makeHashMapGen5():
-    out = open("JavaHashMapGen5.txt", "w", encoding="utf-8")
-    keysList = gen5Yield.keys()
-    for item in keysList:
-        out.write('gen5Values.put("' + item + '", ' + str(gen5Yield.get(item)) + ');\n')
+        out.write('gen5_7Values.put("' + item + '", ' +
+                  str(gen6Update.get(item)) + ');\n')
     out.close()
 
 
 run = 1
 while run:
-    #print("Generation 3 experience points gained: ", genThree(), "\n")
-    #again = input('Again?(y/n): ').lower()
-    #if again == 'n':
+    # print("Generation 3 experience points gained: ", genThree(), "\n")
+    # again = input('Again?(y/n): ').lower()
+    # if again == 'n':
     #    exit(0)
-    #genOne()
-    #genSeven()
+    # genOne()
+    # genSeven()
     makeHashMap()
     makeHashMapGen5()
     makeNames()
@@ -425,8 +441,8 @@ while run:
     exit(0)
     break
 
+
 def getMax():
-# Print key with highest value
+    # Print key with highest value
     allValues = gen3Yield.values()
     print(max(gen3Yield, key=gen3Yield.get), max(allValues))
-    
