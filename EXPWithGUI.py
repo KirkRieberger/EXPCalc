@@ -48,12 +48,12 @@ def updateGen():
         currentDict = gen4Yield
     elif generation.get() == 5:
         gen5Names = []
-        for key in gen4Yield.keys():
+        for key in gen5Yield.keys():
             gen5Names.append(key.capitalize())
         pokemonBox['values'] = [gen5Names[i] for i in range(0, len(gen5Names))]
         pokemonBox['state'] = 'readonly'
         pokemonBox.pack()
-        currentDict = gen4Yield
+        currentDict = gen5Yield
     else:
         pass
 
@@ -161,7 +161,7 @@ def genVmain():
     b = currentDict[pokemon.get().lower()]
     
     Lp = ownLevel.get()
-    print(a, ' ', e, ' ', t, ' ', s, ' ')
+
     exp = ((b*L)/(5*s)*((2*L + 10)/(L + Lp + 10))**2.5 + 1)*t*e*a
     
     return(floor(exp))
@@ -452,7 +452,48 @@ gen5Yield = {'bulbasaur': 64, 'ivysaur': 142, 'venusaur': 236, 'charmander': 62,
              'rotom': 154, 'uxie': 261, 'mespirit': 261, 'azelf': 261,
              'dialga': 306, 'palkia': 306, 'heatran': 270, 'regigigas': 302,
              'giratina': 306, 'cresselia': 270, 'phione': 216, 'manaphy': 270,
-             'darkrai': 270, 'shaymin': 270, 'arceus': 324, 'victini': 270}
+             'darkrai': 270, 'shaymin': 270, 'arceus': 324, 'victini': 270,
+             'snivy': 62, 'servine': 145, 'serperior': 238, 'tepig': 62,
+             'pignite': 146, 'emboar': 238, 'oshawott': 62, 'dewott': 145,
+             'samurott': 238, 'patrat': 51, 'watchog': 147, 'lillipup': 55,
+             'herdier': 130, 'stoutland': 211, 'purrloin': 56, 'liepard': 156,
+             'pansage': 63, 'simisage': 174, 'pansear': 63, 'simisear': 174,
+             'panpour': 63, 'simipour': 174, 'munna': 58, 'musharna': 170,
+             'pidove': 53, 'tranquill': 125, 'unfezant': 215, 'blitzle': 59,
+             'zebstrika': 174, 'roggenrola': 56, 'boldore': 137,
+             'gigalith': 227, 'woobat': 63, 'swoobat': 149, 'drilbur': 66,
+             'excadrill': 178, 'audino': 390, 'timburr': 61, 'gurdurr': 142,
+             'conkeldurr': 227, 'tympole': 59, 'palpitoad': 134,
+             'seismitoad': 225, 'throh': 163, 'sawk': 163, 'sewaddle': 62,
+             'swadloon': 133, 'leavanny': 221, 'venipede': 52,
+             'whirlipede': 126, 'scolipede': 214, 'cottonee': 56,
+             'whimsicott': 168, 'petilil': 56, 'lilligant': 168,
+             'basculin': 161, 'sandile': 58, 'krokorok': 123, 'krookodile': 229,
+             'darumaka': 63, 'darmanitan': 168, 'maractus': 161, 'dwebble': 65,
+             'crustle': 166, 'scraggy': 70, 'scrafty': 171, 'sigilyph': 172,
+             'yamask': 61, 'cofagrigus': 169, 'tirtouga': 71, 'carracosta': 173,
+             'archen': 71, 'archeops': 177, 'trubbish': 66, 'garbodor': 166,
+             'zorua': 66, 'zoroark': 179, 'minccino': 60, 'cinccino': 165,
+             'gothita': 58, 'gothorita': 137, 'gothitelle': 221, 'solosis': 58,
+             'duosion': 130, 'reuniclus': 221, 'ducklett': 61, 'swanna': 166,
+             'vanillite': 61, 'vanillish': 138, 'vanilluxe': 214,
+             'deerling': 67, 'sawsbuck': 166, 'emolga': 150, 'karrablast': 63,
+             'escavalier': 173, 'foongus': 59, 'amoonguss': 162, 'frillish': 67,
+             'jellicent': 168, 'alomomola': 165, 'joltik': 64,
+             'galvantula': 165, 'ferroseed': 61, 'ferrothorn': 171, 'klink': 60,
+             'klang': 154, 'klinklang': 234, 'tynamo': 55, 'eelektrik': 142,
+             'eelektross': 232, 'elgyem': 67, 'beheeyem': 170, 'litwick': 55,
+             'lampent': 130, 'chandelure': 234, 'axew': 64, 'fraxure': 144,
+             'haxorus': 243, 'cubchoo': 61, 'beartic': 170, 'cryogonal': 170,
+             'shelmet': 61, 'accelgor': 173, 'stunfisk': 165, 'mienfoo': 70,
+             'mienshao': 179, 'druddigon': 170, 'golett': 61, 'golurk': 169, 
+             'pawniard': 68, 'bisharp': 172, 'bouffalant': 172, 'rufflet': 70,
+             'braviary': 179, 'vullaby': 74, 'mandibuzz': 179, 'heatmor': 169,
+             'durant': 169, 'deino': 60, 'zweilous': 147, 'hydreigon': 270,
+             'larvesta': 72, 'volcorona': 248, 'cobalion': 261,
+             'terrakion': 261, 'virizion': 261, 'tornadus': 261,
+             'thundurus': 261, 'reshiram': 306, 'zekrom': 306, 'landorus': 270,
+             'kyurem': 297, 'keldeo': 261, 'meloetta': 270, 'genesect': 270}
 
 # Globals
 currentDict = gen3Yield
