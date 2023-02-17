@@ -434,10 +434,10 @@ while run:
     #    exit(0)
     # genOne()
     # genSeven()
-    makeHashMap()
-    makeHashMapGen5()
-    makeNames()
-    makeGen5Names()
+    # makeHashMap()
+    # makeHashMapGen5()
+    # makeNames()
+    # makeGen5Names()
     exit(0)
     break
 
