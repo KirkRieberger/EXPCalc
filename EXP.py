@@ -327,6 +327,7 @@ gen6Update = {'chespin': 63, 'quilladin': 162, 'chesnaught': 239,
               'xerneas': 306, 'yveltal': 306, 'zygarde': 270, 'diancie': 270,
               'hoopa': 270, 'volcanion': 270}
 gen6Yield = gen5Yield | gen6Update
+gen7Update = {}
 gen7Yield = {}
 
 
@@ -414,7 +415,8 @@ def makeNames(gen: int = -1):
         Parameters:
             gen: The generation whose names should be exported, defaults to most
                  recent generation
-        Returns: None, creates output file
+        Returns: 
+            None, creates output file
     """
     match gen:
         case -1:
@@ -441,18 +443,61 @@ def makeNames(gen: int = -1):
         case 7:
             keysList = gen7Yield.keys()
 
-    out = open(f'Gen{gen}_XMLNameFormat.txt', "w", encoding="utf-8")
+    out = open(f'Gen{gen}XMLNameFormat.xml', "w", encoding="utf-8")
     for key in keysList:
         out.write('<item>"' + key.capitalize() + '"</item>\n')
     out.close()
 
 
-def makeHashMap():
-    out = open("JavaHashMap.txt", "w", encoding="utf-8")
-    keysList = gen6Update.keys()
+def makeHashMap(gen: int = -1, map:  str = "gen5_7Values"):
+    """
+    Generates a .txt file containing the Java syntax for creating a Hash Map for
+    the input generation.
+
+    Parameters:
+        gen: The generation whose values should be output
+        map: The name of the Java Hash Map
+
+    Returns:
+        None, generates output file
+    """
+    match gen:
+        case -1:
+            keysList = gen6Update.keys()
+
+            out = open(f'JavaHashMap.txt', "w", encoding="utf-8")
+            for item in keysList:
+                out.write('gen5_7Values.put("' + item + '", ' +
+                          str(gen6Update.get(item)) + ');\n')
+            out.close()
+            return
+
+        case 1:
+            keysList = gen1Yield.keys()
+            dict = gen1Yield
+        case 2:
+            keysList = gen2Update.keys()
+            dict = gen2Yield
+        case 3:
+            keysList = gen3Update.keys()
+            dict = gen3Yield
+        case 4:
+            keysList = gen4Update.keys()
+            dict = gen4Yield
+        case 5:
+            keysList = gen5Yield.keys()
+            dict = gen5Yield
+        case 6:
+            keysList = gen6Update.keys()
+            dict = gen6Yield
+        case 7:
+            keysList = gen7Update.keys()
+            dict = gen7Yield
+
+    out = open(f"Gen{gen}JavaHashMap.txt", "w", encoding="utf-8")
     for item in keysList:
-        out.write('gen5_7Values.put("' + item + '", ' +
-                  str(gen6Update.get(item)) + ');\n')
+        out.write(f'{map}.put("' + item + '", ' +
+                  str(dict.get(item)) + ');\n')
     out.close()
 
 
@@ -463,9 +508,9 @@ while run:
     # if again == 'n':
     #    exit(0)
 
-    # makeHashMap()
+    makeHashMap(1, "gen1_4Values")
     # makeHashMapGen5()
-    makeNames()
+    # makeNames()
     exit(0)
     break
 
