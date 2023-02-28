@@ -331,8 +331,6 @@ gen7Yield = {}
 
 
 def genOne():
-    for key in gen4Yield:
-        print(key, gen4Yield[key])
     return 0
 
 
@@ -405,13 +403,45 @@ def genSix():
 
 
 def genSeven():
-    print(len(gen3Update))
     return 0
 
 
-def makeNames():
-    out = open("XMLNameFormat.txt", "w", encoding="utf-8")
-    keysList = gen6Yield.keys()
+def makeNames(gen: int = -1):
+    """
+    Creates a .xml file with the Pokemon names formatted to be used with 
+        Android Studio
+
+        Parameters:
+            gen: The generation whose names should be exported, defaults to most
+                 recent generation
+        Returns: None, creates output file
+    """
+    match gen:
+        case -1:
+            keysList = gen6Yield.keys()
+
+            out = open(f'XMLNameFormat.txt', "w", encoding="utf-8")
+            for key in keysList:
+                out.write('<item>"' + key.capitalize() + '"</item>\n')
+            out.close()
+            return
+
+        case 1:
+            keysList = gen1Yield.keys()
+        case 2:
+            keysList = gen2Yield.keys()
+        case 3:
+            keysList = gen3Yield.keys()
+        case 4:
+            keysList = gen4Yield.keys()
+        case 5:
+            keysList = gen5Yield.keys()
+        case 6:
+            keysList = gen6Yield.keys()
+        case 7:
+            keysList = gen7Yield.keys()
+
+    out = open(f'Gen{gen}_XMLNameFormat.txt', "w", encoding="utf-8")
     for key in keysList:
         out.write('<item>"' + key.capitalize() + '"</item>\n')
     out.close()
@@ -432,12 +462,10 @@ while run:
     # again = input('Again?(y/n): ').lower()
     # if again == 'n':
     #    exit(0)
-    # genOne()
-    # genSeven()
+
     # makeHashMap()
     # makeHashMapGen5()
-    # makeNames()
-    # makeGen5Names()
+    makeNames()
     exit(0)
     break
 
