@@ -359,16 +359,20 @@ gen7RegUpdate = {'rowlet': 64, 'dartrix': 147, 'decidueye': 239, 'litten': 64,
                  'zygarde (10%)': 219, 'zygarde': 270,
                  'zygarde (complete)': 319}
 gen7RegYield = gen6Yield | gen7RegUpdate
-gen7UltUpdate = {'silvally': 257, 'tapu koko': 257, 'tapu lele': 257,
-                 'tapu bulu': 257, 'tapu fini': 257, 'cosmoem': 140,
-                 'solgaleo': 306, 'lunala': 306, 'nihlego': 257,
-                 'buzzwole': 257, 'pheromosa': 257, 'xurkitree': 257,
-                 'celesteela': 257, 'kartana': 257, 'guzzlord': 257,
-                 'necrozma': 270, 'necrozma (dusk mane)': 306,
-                 'necrozma (dawn wings)': 306, 'ultra necrozma': 339,
-                 'magearna': 270, 'marshadow': 270, 'poipole': 189,
-                 'naganadel': 243, 'stakataka': 257, 'blacephalon': 257,
-                 'zeraora': 270, 'meltan': 135, 'melmetal': 270}
+gen7UltUpdate = gen7RegUpdate | {'silvally': 257, 'tapu koko': 257,
+                                 'tapu lele': 257, 'tapu bulu': 257,
+                                 'tapu fini': 257, 'cosmoem': 140,
+                                 'solgaleo': 306, 'lunala': 306, 'nihlego': 257,
+                                 'buzzwole': 257, 'pheromosa': 257,
+                                 'xurkitree': 257, 'celesteela': 257,
+                                 'kartana': 257, 'guzzlord': 257,
+                                 'necrozma': 270, 'necrozma (dusk mane)': 306,
+                                 'necrozma (dawn wings)': 306,
+                                 'ultra necrozma': 339, 'magearna': 270,
+                                 'marshadow': 270, 'poipole': 189,
+                                 'naganadel': 243, 'stakataka': 257,
+                                 'blacephalon': 257, 'zeraora': 270,
+                                 'meltan': 135, 'melmetal': 270}
 gen7UltYield = gen7RegYield | gen7UltUpdate
 
 
@@ -461,7 +465,7 @@ def makeNames(gen: int = -1):
     """
     match gen:
         case -1:
-            keysList = gen6Yield.keys()
+            keysList = gen7UltYield.keys()
 
             out = open(f'XMLNameFormat.txt', "w", encoding="utf-8")
             for key in keysList:
@@ -504,7 +508,7 @@ def makeHashMap(gen: int = -1, map:  str = "gen5_7Values"):
     """
     match gen:
         case -1:
-            keysList = gen6Update.keys()
+            keysList = gen7UltUpdate.keys()
 
             out = open(f'JavaHashMap.txt', "w", encoding="utf-8")
             for item in keysList:
@@ -557,8 +561,13 @@ def main():
 
 
 def utility():
-    makeHashMap()
-    makeNames()
+    try:
+        gen = int(input("What generation?\n(1-7); leave blank for most recent): "))
+    except ValueError:
+        gen = -1
+
+    makeHashMap(gen)
+    makeNames(gen)
 
 
 def startup():
