@@ -515,10 +515,21 @@ def main():
             exit(0)
 
 
-def mode2():
+def utility():
     makeHashMap()
     makeNames()
 
 
+def startup():
+    mode = input("Run or Utility?(R/U): ")
+    while True:
+        if mode.lower() == "r":
+            main()
+        elif mode.lower() == "u":
+            utility()
+        else:
+            mode = input("Please type R or U: ")
+
+
 if __name__ == "__main__":
-    main()
+    startup()
