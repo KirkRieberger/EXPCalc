@@ -501,21 +501,24 @@ def makeHashMap(gen: int = -1, map:  str = "gen5_7Values"):
     out.close()
 
 
-run = 1
-while run:
-    # print("Generation 3 experience points gained: ", genThree(), "\n")
-    # again = input('Again?(y/n): ').lower()
-    # if again == 'n':
-    #    exit(0)
-
-    makeHashMap(1, "gen1_4Values")
-    # makeHashMapGen5()
-    # makeNames()
-    exit(0)
-    break
-
-
 def getMax():
     # Print key with highest value
     allValues = gen3Yield.values()
     print(max(gen3Yield, key=gen3Yield.get), max(allValues))
+
+
+def main():
+    while True:
+        print("Generation 3 experience points gained: ", genThree(), "\n")
+        again = input('Again?(y/n): ').lower()
+        if again == 'n':
+            exit(0)
+
+
+def mode2():
+    makeHashMap()
+    makeNames()
+
+
+if __name__ == "__main__":
+    main()
