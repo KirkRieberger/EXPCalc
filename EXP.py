@@ -306,6 +306,7 @@ gen5Yield = {'bulbasaur': 64, 'ivysaur': 142, 'venusaur': 236, 'charmander': 62,
              'terrakion': 261, 'virizion': 261, 'tornadus': 261,
              'thundurus': 261, 'reshiram': 306, 'zekrom': 306, 'landorus': 270,
              'kyurem': 297, 'keldeo': 261, 'meloetta': 270, 'genesect': 270}
+# TODO: Megas have a different EXP yield from base forms
 gen6Update = {'chespin': 63, 'quilladin': 162, 'chesnaught': 239,
               'fennekin': 61, 'braixen': 143, 'delphox': 240, 'froakie': 63,
               'frogadier': 142, 'greninja': 239, 'bunnelby': 47,
@@ -325,10 +326,50 @@ gen6Update = {'chespin': 63, 'quilladin': 162, 'chesnaught': 239,
               'trevenant': 166, 'pumpkaboo': 67, 'gourgeist': 173,
               'bergmite': 61, 'avalugg': 180, 'noibat': 49, 'noivern': 187,
               'xerneas': 306, 'yveltal': 306, 'zygarde': 270, 'diancie': 270,
-              'hoopa': 270, 'volcanion': 270}
+              'hoopa': 270, 'hoopa (unbound)': 306, 'volcanion': 270}
 gen6Yield = gen5Yield | gen6Update
-gen7Update = {}
-gen7Yield = {}
+gen7RegUpdate = {'rowlet': 64, 'dartrix': 147, 'decidueye': 239, 'litten': 64,
+                 'torracat': 147, 'incineroar': 239, 'popplio': 64,
+                 'brionne': 147, 'primarina': 239, 'pikipek': 53,
+                 'trumbeak': 124, 'toucannon': 218, 'yungoos': 51,
+                 'gumshoos': 146, 'grubbin': 60, 'charjabug': 140,
+                 'vikavolt': 225, 'crabrawler': 68, 'crabominable': 167,
+                 'oricorio': 167, 'cutiefly': 61, 'ribombee': 162,
+                 'rockruff': 56, 'lycanroc': 170, 'wishiwashi (solo)': 61,
+                 'wishiwashi (school)': 217, 'mareanie': 61, 'toxapex': 173,
+                 'mudbray': 77, 'mudsdale': 175, 'dewpider': 54,
+                 'araquanid': 159, 'fomantis': 50, 'lurantis': 168,
+                 'morelull': 57, 'shiinotic': 142, 'salandit': 64,
+                 'salazzle': 168, 'stufful': 68, 'bewear': 175, 'bounsweet': 42,
+                 'steenee': 102, 'tsareena': 230, 'comfey': 170,
+                 'oranguru': 172, 'passimian': 172, 'wimpod': 46,
+                 'golisopod': 186, 'sandyhast': 64, 'palossand': 168,
+                 'pyukumuku': 144, 'type: null': 107, 'silvally': 114,
+                 'minior (meteor)': 154, 'minior (core)': 175, 'komala': 168,
+                 'turtonator': 170, 'togedemaru': 152, 'mimikyu': 167,
+                 'bruxish': 166, 'drampa': 170, 'dhelmise': 181, 'jangmo-o': 60,
+                 'hakamo-o': 147, 'kommo-o': 270, 'tapu-koko': 114,
+                 'tapu lele': 114, 'tapu bulu': 114, 'tapu fini': 114,
+                 'cosmog': 40, 'cosmoem': 80, 'solgaleo': 136, 'lunala': 136,
+                 'nihilego': 114, 'buzzwole': 114, 'pheromosa': 114,
+                 'xurkitree': 114, 'celesteela': 114, 'kartana': 114,
+                 'guzzlord': 114, 'necrozma': 120, 'magearna': 120,
+                 'marshadow': 120,
+                 # ↓↓↓ Updates over previous generations ↓↓↓
+                 'zygarde (10%)': 219, 'zygarde': 270,
+                 'zygarde (complete)': 319}
+gen7RegYield = gen6Yield | gen7RegUpdate
+gen7UltUpdate = {'silvally': 257, 'tapu koko': 257, 'tapu lele': 257,
+                 'tapu bulu': 257, 'tapu fini': 257, 'cosmoem': 140,
+                 'solgaleo': 306, 'lunala': 306, 'nihlego': 257,
+                 'buzzwole': 257, 'pheromosa': 257, 'xurkitree': 257,
+                 'celesteela': 257, 'kartana': 257, 'guzzlord': 257,
+                 'necrozma': 270, 'necrozma (dusk mane)': 306,
+                 'necrozma (dawn wings)': 306, 'ultra necrozma': 339,
+                 'magearna': 270, 'marshadow': 270, 'poipole': 189,
+                 'naganadel': 243, 'stakataka': 257, 'blacephalon': 257,
+                 'zeraora': 270, 'meltan': 135, 'melmetal': 270}
+gen7UltYield = gen7RegYield | gen7UltUpdate
 
 
 def genOne():
