@@ -482,7 +482,7 @@ def makeNames(gen: int = -1):
         case 6:
             keysList = gen6Yield.keys()
         case 7:
-            keysList = gen7Yield.keys()
+            keysList = gen7UltYield.keys()
 
     out = open(f'Gen{gen}XMLNameFormat.xml', "w", encoding="utf-8")
     for key in keysList:
@@ -532,8 +532,8 @@ def makeHashMap(gen: int = -1, map:  str = "gen5_7Values"):
             keysList = gen6Update.keys()
             dict = gen6Yield
         case 7:
-            keysList = gen7Update.keys()
-            dict = gen7Yield
+            keysList = gen7UltUpdate.keys()
+            dict = gen7UltYield
 
     out = open(f"Gen{gen}JavaHashMap.txt", "w", encoding="utf-8")
     for item in keysList:
