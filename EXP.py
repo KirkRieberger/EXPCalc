@@ -411,7 +411,7 @@ gen8Update = {'grookey': 62, 'thwackey': 147, 'rillaboom': 265, 'scorbunny': 62,
               'urshifu': 275, 'zarude': 300, 'regieleki': 290, 'regidrago': 290,
               'glastrier': 290, 'spectrier': 290, 'calyrex': 250,
               'calyrex (ice rider)': 340, 'calyrex (shadow rider)': 340,
-              # Legends
+              # Legends - Unknown EXP Yields
               'wyrdeer': -1, 'kleavor': -1, 'ursaluna': -1, 'basculegion': -1,
               'sneasler': -1, 'overquill': -1, 'enamorus': -1}
 gen8Yield = gen7UltYield | gen8Update
@@ -429,6 +429,13 @@ def genTwo():
 
 
 def genThree():
+    """
+    Calculates the Experience Yield of a particular Pokemon in Generation III
+
+        Parameters: None, command line
+
+        Returns: None, prints to stdout
+    """
     a = input('Was this a trainer battle?(y/n): ').lower()
     if a == 'y':
         a = 1.5
@@ -509,7 +516,7 @@ def makeNames(gen: int = -1):
     """
     match gen:
         case -1:
-            keysList = gen7UltYield.keys()
+            keysList = gen8Yield.keys()
 
             out = open(f'XMLNameFormat.txt', "w", encoding="utf-8")
             for key in keysList:
@@ -531,6 +538,8 @@ def makeNames(gen: int = -1):
             keysList = gen6Yield.keys()
         case 7:
             keysList = gen7UltYield.keys()
+        case 8:
+            keysList = gen8Yield.keys()
 
     out = open(f'Gen{gen}XMLNameFormat.xml', "w", encoding="utf-8")
     for key in keysList:
@@ -552,7 +561,7 @@ def makeHashMap(gen: int = -1, map:  str = "gen5_7Values"):
     """
     match gen:
         case -1:
-            keysList = gen7UltUpdate.keys()
+            keysList = gen8Update.keys()
 
             out = open(f'JavaHashMap.txt', "w", encoding="utf-8")
             for item in keysList:
@@ -582,6 +591,9 @@ def makeHashMap(gen: int = -1, map:  str = "gen5_7Values"):
         case 7:
             keysList = gen7UltUpdate.keys()
             dict = gen7UltYield
+        case 8:
+            keysList = gen8Update.keys()
+            dict = gen8Yield
 
     out = open(f"Gen{gen}JavaHashMap.txt", "w", encoding="utf-8")
     for item in keysList:
@@ -592,6 +604,7 @@ def makeHashMap(gen: int = -1, map:  str = "gen5_7Values"):
 
 def getMax():
     """Print key with highest value"""
+    # TODO: Output based on generation
     allValues = gen3Yield.values()
     print(max(gen3Yield, key=gen3Yield.get), max(allValues))
 
