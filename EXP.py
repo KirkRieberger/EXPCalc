@@ -1,9 +1,13 @@
 # Pokemon Experience Gain Calculator V1
-# Update to Python 3.9 dipshit
+# Update to (at least) Python 3.9 dipshit
 # https://stackoverflow.com/questions/38987/how-do-i-merge-two-dictionaries-in-a-single-expression-taking-union-of-dictiona
 # Kirk Rieberger
+
 from math import floor
 from sys import exit
+
+# TODO: Add file based calculation/batch calculation
+
 # Dictionaries containing the exp values for each Pokemon
 # Pokemon Red/Blue/Green/Yellow
 gen1Yield = {'bulbasaur': 64, 'ivysaur': 141, 'venusaur': 208, 'charmander': 65,
