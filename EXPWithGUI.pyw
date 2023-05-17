@@ -3,9 +3,12 @@ import tkinter as tk
 from tkinter import ttk
 from math import floor
 
+# TODO: OOP
 
 # Function definitions
 # Updates opponent's level display
+
+
 def levelChanged(event):
     L = level.get()
     msg = f"Opponent's Level: {L}"
@@ -525,7 +528,7 @@ gen6Update = {'chespin': 63, 'quilladin': 162, 'chesnaught': 239,
 gen6Yield = gen5Yield | gen6Update
 
 # Globals
-currentDict = gen3Yield
+currentDict = gen3Yield  # Default value
 
 # Create main window
 root = tk.Tk()
