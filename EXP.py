@@ -424,17 +424,10 @@ gen9Update = {}
 gen9Yield = gen8Yield | gen9Update
 
 
-def genOne():
-    return 0
-
-
-def genTwo():
-    return 0
-
-
 def genThree():
     """
     Calculates the Experience Yield of a particular Pokemon in Generation III
+    Uses command line arguments to test functionality
 
         Parameters: None, command line
 
@@ -489,22 +482,6 @@ def genThree():
     exp = (a*t*b*e*L)/(7*s)
 
     return floor(exp)
-
-
-def genFour():
-    return 0
-
-
-def genFive():
-    return 0
-
-
-def genSix():
-    return 0
-
-
-def genSeven():
-    return 0
 
 
 def makeNames(gen: int = -1):
