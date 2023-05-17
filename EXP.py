@@ -590,7 +590,7 @@ def getMax():
     print(max(gen3Yield, key=gen3Yield.get), max(allValues))
 
 
-def main():
+def run():
     """
     Runs the calculator function in a loop
 
@@ -640,7 +640,7 @@ def startup():
     mode = input("Run or Utility?(R/U): ")
     while True:
         if mode.lower() == "r":
-            main()
+            run()
         elif mode.lower() == "u":
             utility()
         else:
