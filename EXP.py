@@ -1,7 +1,7 @@
-# Pokemon Experience Gain Calculator V1
-# Update to (at least) Python 3.9 dipshit
-# https://stackoverflow.com/questions/38987/how-do-i-merge-two-dictionaries-in-a-single-expression-taking-union-of-dictiona
+# Pokemon Experience Gain Calculator V1.1
+# Minimum Python Version: 3.9
 # Kirk Rieberger
+# Last updated May 17, 2023
 
 from math import floor
 from sys import exit
