@@ -591,6 +591,15 @@ def getMax():
 
 
 def main():
+    """
+    Runs the calculator function in a loop
+
+    Parameters:
+        None, command line input to continue
+
+    Returns:
+        None, prints to command line
+    """
     while True:
         print("Generation 3 experience points gained: ", genThree(), "\n")
         again = input('Again?(y/n): ').lower()
@@ -599,6 +608,15 @@ def main():
 
 
 def utility():
+    """
+    Runs the program in utility mode
+
+    Parameters:
+        None, command line input of desired generation
+
+    Returns:
+        None, generates Java format hash map and xml containing Pokemon names
+    """
     try:
         gen = int(input("What generation?\n(1-7); leave blank for most recent): "))
     except ValueError:
@@ -609,6 +627,15 @@ def utility():
 
 
 def startup():
+    """
+    Determines what mode to run the program in
+
+    Parameters:
+        None, command line input
+
+    Returns:
+        None, begins running program    
+    """
     # Should be factored out to a config file
     mode = input("Run or Utility?(R/U): ")
     while True:
