@@ -8,6 +8,7 @@ from tkinter import ttk
 from math import floor
 
 # TODO: OOP
+# TODO: Fix function doc comments
 
 # Function definitions
 # Updates opponent's level display
