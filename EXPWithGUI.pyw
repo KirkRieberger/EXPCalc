@@ -632,8 +632,12 @@ currentDict = gen3Yield  # Default value
 root = tk.Tk()
 root.title("EXP Calculator")
 root.resizable(False, False)
-img = tk.Image("photo", file="pokeball.png")
-root.tk.call('wm', 'iconphoto', root._w, img)
+try:
+    img = tk.Image("photo", file="pokeball.png")
+    root.tk.call('wm', 'iconphoto', root._w, img)
+except:
+    pass
+
 
 # Return values from UI / Default values
 pokemon = tk.StringVar()
