@@ -1,6 +1,7 @@
-# Pokemon Experience Gain Calculator V1.1
-# Minimum Python Version: 3.9
-# Kirk Rieberger
+# EXP.py - A program to create lists of Pokemon names and base EXP values.
+# Copyright (C) 2023 Kirk Rieberger
+# Issued under GPLv2 or later
+# See LICENCE.txt for full license
 # Last updated May 17, 2023
 
 from math import floor

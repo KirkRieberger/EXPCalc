@@ -1,4 +1,8 @@
-# Python 3.9/3.10
+# EXPWithGUI.py - A program to calculate EXP point gains in the Pokemon games.
+# Copyright (C) 2023 Kirk Rieberger
+# Issued under GPLv2 or later
+# See LICENCE.txt for full license
+
 import tkinter as tk
 from tkinter import ttk
 from math import floor
