@@ -196,6 +196,7 @@ def go():
             msg = f'EXP Points Gained: {exp}'
             resultLabel.config(text=msg)
 
+    # TODO: Gen 5 EXP Share
     elif (generation.get() == 5):
         exp = genVmain()
         msg = f'EXP Points Gained: {exp}'
@@ -206,6 +207,7 @@ def go():
 
 
 # EXP yields by generation
+# Pokemon Red/Blue/Green/Yellow
 gen1Yield = {'bulbasaur': 64, 'ivysaur': 141, 'venusaur': 208, 'charmander': 65,
              'charmeleon': 142, 'charizard': 209, 'sqirtle': 66,
              'wartortle': 143, 'blastoise': 210, 'caterpie': 53, 'metapod': 72,
@@ -246,6 +248,7 @@ gen1Yield = {'bulbasaur': 64, 'ivysaur': 141, 'venusaur': 208, 'charmander': 65,
              'snorlax': 154, 'articuno': 215, 'zapdos': 216, 'moltres': 217,
              'dratini': 67, 'dragonair': 144, 'dragonite': 218, 'mewtwo': 220,
              'mew': 64}
+# Pokemon Gold/Silver/Crystal
 gen2Update = {'chikorita': 64, 'bayleef': 141, 'meganium': 208, 'cyndaquil': 65,
               'quilava': 142, 'typhlosion': 209, 'totodile': 66, 'croconaw': 143,
               'feraligatr': 210, 'sentret': 57, 'furret': 116, 'hoothoot': 58,
@@ -272,6 +275,7 @@ gen2Update = {'chikorita': 64, 'bayleef': 141, 'meganium': 208, 'cyndaquil': 65,
               'entei': 217, 'suicune': 215, 'larvitar': 67, 'pupitar': 114,
               'tyranitar': 218, 'lugia': 220, 'ho-oh': 220, 'celebi': 64}
 gen2Yield = gen1Yield | gen2Update
+# Pokemon Ruby/Sapphire/Emerald/Fire Red/Leaf Green
 gen3Update = {'treeko': 65, 'grovyle': 141, 'sceptile': 208, 'torchic': 65,
               'combusken': 142, 'blaziken': 209, 'mudkip': 65, 'marshtomp': 143,
               'swampert': 210, 'poochyena': 55, 'mightyena': 128,
@@ -308,6 +312,7 @@ gen3Update = {'treeko': 65, 'grovyle': 141, 'sceptile': 208, 'torchic': 65,
               'latios': 211, 'kyogre': 218, 'groudon': 218, 'rayquaza': 220,
               'jirachi': 215, 'deoxys': 215}
 gen3Yield = gen2Yield | gen3Update
+# Pokemon Diamond/Pearl/Platinum/Heart Gold/Soul Silver
 gen4Update = {'turtwig': 64, 'grotle': 141, 'torterra': 208, 'chimchar': 65,
               'monferno': 142, 'infernape': 209, 'piplup': 66, 'prinplup': 143,
               'empoleon': 210, 'starly': 56, 'staravia': 113, 'staraptor': 172,
@@ -342,6 +347,7 @@ gen4Update = {'turtwig': 64, 'grotle': 141, 'torterra': 208, 'chimchar': 65,
               'dustox': 161, 'lileep': 99, 'cradily': 199, 'anorith': 99,
               'armaldo': 99}
 gen4Yield = gen3Yield | gen4Update
+# Pokemon Black/White/Black 2/White 2
 gen5Yield = {'bulbasaur': 64, 'ivysaur': 142, 'venusaur': 236, 'charmander': 62,
              'charmeleon': 142, 'charizard': 240, 'sqirtle': 63,
              'wartortle': 142, 'blastoise': 239, 'caterpie': 39, 'metapod': 72,
@@ -509,6 +515,8 @@ gen5Yield = {'bulbasaur': 64, 'ivysaur': 142, 'venusaur': 236, 'charmander': 62,
              'terrakion': 261, 'virizion': 261, 'tornadus': 261,
              'thundurus': 261, 'reshiram': 306, 'zekrom': 306, 'landorus': 270,
              'kyurem': 297, 'keldeo': 261, 'meloetta': 270, 'genesect': 270}
+# TODO: Megas have a different EXP yield from base forms
+# Pokemon X/Y/Omega Ruby/Alpha Sapphire
 gen6Update = {'chespin': 63, 'quilladin': 162, 'chesnaught': 239,
               'fennekin': 61, 'braixen': 143, 'delphox': 240, 'froakie': 63,
               'frogadier': 142, 'greninja': 239, 'bunnelby': 47,
@@ -530,6 +538,90 @@ gen6Update = {'chespin': 63, 'quilladin': 162, 'chesnaught': 239,
               'xerneas': 306, 'yveltal': 306, 'zygarde': 270, 'diancie': 270,
               'hoopa': 270, 'volcanion': 270}
 gen6Yield = gen5Yield | gen6Update
+# Pokemon Sun/Moon
+gen7RegUpdate = {'rowlet': 64, 'dartrix': 147, 'decidueye': 239, 'litten': 64,
+                 'torracat': 147, 'incineroar': 239, 'popplio': 64,
+                 'brionne': 147, 'primarina': 239, 'pikipek': 53,
+                 'trumbeak': 124, 'toucannon': 218, 'yungoos': 51,
+                 'gumshoos': 146, 'grubbin': 60, 'charjabug': 140,
+                 'vikavolt': 225, 'crabrawler': 68, 'crabominable': 167,
+                 'oricorio': 167, 'cutiefly': 61, 'ribombee': 162,
+                 'rockruff': 56, 'lycanroc': 170, 'wishiwashi (solo)': 61,
+                 'wishiwashi (school)': 217, 'mareanie': 61, 'toxapex': 173,
+                 'mudbray': 77, 'mudsdale': 175, 'dewpider': 54,
+                 'araquanid': 159, 'fomantis': 50, 'lurantis': 168,
+                 'morelull': 57, 'shiinotic': 142, 'salandit': 64,
+                 'salazzle': 168, 'stufful': 68, 'bewear': 175, 'bounsweet': 42,
+                 'steenee': 102, 'tsareena': 230, 'comfey': 170,
+                 'oranguru': 172, 'passimian': 172, 'wimpod': 46,
+                 'golisopod': 186, 'sandyhast': 64, 'palossand': 168,
+                 'pyukumuku': 144, 'type: null': 107, 'silvally': 114,
+                 'minior (meteor)': 154, 'minior (core)': 175, 'komala': 168,
+                 'turtonator': 170, 'togedemaru': 152, 'mimikyu': 167,
+                 'bruxish': 166, 'drampa': 170, 'dhelmise': 181, 'jangmo-o': 60,
+                 'hakamo-o': 147, 'kommo-o': 270, 'tapu-koko': 114,
+                 'tapu lele': 114, 'tapu bulu': 114, 'tapu fini': 114,
+                 'cosmog': 40, 'cosmoem': 80, 'solgaleo': 136, 'lunala': 136,
+                 'nihilego': 114, 'buzzwole': 114, 'pheromosa': 114,
+                 'xurkitree': 114, 'celesteela': 114, 'kartana': 114,
+                 'guzzlord': 114, 'necrozma': 120, 'magearna': 120,
+                 'marshadow': 120,
+                 # ↓↓↓ Updates over previous generations ↓↓↓
+                 'zygarde (10%)': 219, 'zygarde': 270,
+                 'zygarde (complete)': 319}
+gen7RegYield = gen6Yield | gen7RegUpdate
+# Pokemon Ultra Sun/Ultra Moon/Let's Go Pikachu/Let's Go Eevee
+gen7UltUpdate = gen7RegUpdate | {'silvally': 257, 'tapu koko': 257,
+                                 'tapu lele': 257, 'tapu bulu': 257,
+                                 'tapu fini': 257, 'cosmoem': 140,
+                                 'solgaleo': 306, 'lunala': 306, 'nihlego': 257,
+                                 'buzzwole': 257, 'pheromosa': 257,
+                                 'xurkitree': 257, 'celesteela': 257,
+                                 'kartana': 257, 'guzzlord': 257,
+                                 'necrozma': 270, 'necrozma (dusk mane)': 306,
+                                 'necrozma (dawn wings)': 306,
+                                 'ultra necrozma': 339, 'magearna': 270,
+                                 'marshadow': 270, 'poipole': 189,
+                                 'naganadel': 243, 'stakataka': 257,
+                                 'blacephalon': 257, 'zeraora': 270,
+                                 'meltan': 135, 'melmetal': 270}
+gen7UltYield = gen7RegYield | gen7UltUpdate
+# Pokemon Sword/Shield/Brilliant Diamond/Shining Pearl/Legends Arceus
+gen8Update = {'grookey': 62, 'thwackey': 147, 'rillaboom': 265, 'scorbunny': 62,
+              'raboot': 147, 'cinderace': 265, 'sobble': 62, 'drizzile': 147,
+              'inteleon': 265, 'skwovet': 55, 'greedent': 161, 'rookidee': 49,
+              'corvisquire': 128, 'corviknight': 248, 'blipbug': 36,
+              'dottler': 117, 'orbeetle': 253, 'nickit': 49, 'thievul': 159,
+              'gossifleur': 50, 'eldegoss': 161, 'wooloo': 122, 'dubwool': 172,
+              'chewtle': 57, 'drednaw': 170, 'yamper': 54, 'boltund': 172,
+              'rolycoly': 48, 'carkol': 144, 'coalossal': 255, 'applin': 52,
+              'flapple': 170, 'appletun': 170, 'silicobra': 63,
+              'sandaconda': 179, 'cramorant': 166, 'arrokuda': 56,
+              'barraskewda': 172, 'toxel': 48, 'toxtricity': 176,
+              'sizzlipede': 61, 'centiskorch': 184, 'clobbopus': 62,
+              'grapploct': 168, 'sinistea': 62, 'polteageist': 178,
+              'hatenna': 53, 'hattrem': 130, 'hatterene': 255, 'impidimp': 53,
+              'morgrem': 130, 'grimmsnarl': 255, 'obstagoon': 260,
+              'perrserker': 154, 'cursola': 179, "sirfetch'd": 177,
+              'mr. ryme': 182, 'runerigus': 169, 'milcery': 54, 'alcremie': 173,
+              'falinks': 165, 'pincurchin': 152, 'snom': 37, 'frosmoth': 166,
+              'stonjourner': 165, 'eiscue': 165, 'indeedee': 166,
+              'morpeko': 153, 'cufant': 66, 'copperajah': 175, 'dracozolt': 177,
+              'arctozolt': 177, 'dracovish': 177, 'arctovish': 177,
+              'duraludon': 187, 'dreepy': 54, 'drakloak': 144, 'dragapult': 300,
+              'zacian (hero)': 335, 'zacian (crowned)': 360,
+              'zamazenta (hero)': 335, 'zamazenta (crowned)': 360,
+              'eternatus': 345, 'eternatus (eternamax)': 563, 'kubfu': 77,
+              'urshifu': 275, 'zarude': 300, 'regieleki': 290, 'regidrago': 290,
+              'glastrier': 290, 'spectrier': 290, 'calyrex': 250,
+              'calyrex (ice rider)': 340, 'calyrex (shadow rider)': 340,
+              # Legends - Unknown EXP Yields
+              'wyrdeer': -1, 'kleavor': -1, 'ursaluna': -1, 'basculegion': -1,
+              'sneasler': -1, 'overquill': -1, 'enamorus': -1}
+gen8Yield = gen7UltYield | gen8Update
+# Pokemon Scarlet/Violet
+gen9Update = {}
+gen9Yield = gen8Yield | gen9Update
 
 # Globals
 currentDict = gen3Yield  # Default value
