@@ -18,6 +18,8 @@ def levelChanged(event):
     msg = f"Opponent's Level: {L}"
     levelDisplay.config(text=msg)
 
+# TODO: Gen SM / USUM distinction
+
 
 def updateGen():
     global currentDict
