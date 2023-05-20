@@ -21,56 +21,82 @@ def levelChanged(event):
 
 def updateGen():
     global currentDict
-    if generation.get() == 1:
-        gen1Names = []
-        for key in gen1Yield.keys():
-            gen1Names.append(key.capitalize())
-        pokemonBox['values'] = [gen1Names[i] for i in range(0, len(gen1Names))]
-        pokemonBox['state'] = 'readonly'
-        pokemonBox.pack()
-        currentDict = gen1Yield
-    elif generation.get() == 2:
-        gen2Names = []
-        for key in gen2Yield.keys():
-            gen2Names.append(key.capitalize())
-        pokemonBox['values'] = [gen2Names[i] for i in range(0, len(gen2Names))]
-        pokemonBox['state'] = 'readonly'
-        pokemonBox.pack()
-        currentDict = gen2Yield
-    elif generation.get() == 3:
-        gen3Names = []
-        for key in gen3Yield.keys():
-            gen3Names.append(key.capitalize())
-        pokemonBox['values'] = [gen3Names[i] for i in range(0, len(gen3Names))]
-        pokemonBox['state'] = 'readonly'
-        pokemonBox.pack()
-        currentDict = gen3Yield
-    elif generation.get() == 4:
-        gen4Names = []
-        for key in gen4Yield.keys():
-            gen4Names.append(key.capitalize())
-        pokemonBox['values'] = [gen4Names[i] for i in range(0, len(gen4Names))]
-        pokemonBox['state'] = 'readonly'
-        pokemonBox.pack()
-        currentDict = gen4Yield
-    elif generation.get() == 5:
-        gen5Names = []
-        for key in gen5Yield.keys():
-            gen5Names.append(key.capitalize())
-        pokemonBox['values'] = [gen5Names[i] for i in range(0, len(gen5Names))]
-        pokemonBox['state'] = 'readonly'
-        pokemonBox.pack()
-        currentDict = gen5Yield
-    elif generation.get() == 6:
-        gen6Names = []
-        for key in gen6Yield.keys():
-            gen6Names.append(key.capitalize())
-        pokemonBox['values'] = [gen6Names[i] for i in range(0, len(gen6Names))]
-        pokemonBox['state'] = 'readonly'
-        pokemonBox.pack()
-        currentDict = gen6Yield
-    else:
-        pass
+
+    match generation.get():
+        case 1:
+            gen1Names = []
+            for key in gen1Yield.keys():
+                gen1Names.append(key.capitalize())
+            pokemonBox['values'] = [gen1Names[i]
+                                    for i in range(0, len(gen1Names))]
+            pokemonBox['state'] = 'readonly'
+            pokemonBox.pack()
+            currentDict = gen1Yield
+        case 2:
+            gen2Names = []
+            for key in gen2Yield.keys():
+                gen2Names.append(key.capitalize())
+            pokemonBox['values'] = [gen2Names[i]
+                                    for i in range(0, len(gen2Names))]
+            pokemonBox['state'] = 'readonly'
+            pokemonBox.pack()
+            currentDict = gen2Yield
+        case 3:
+            gen3Names = []
+            for key in gen3Yield.keys():
+                gen3Names.append(key.capitalize())
+            pokemonBox['values'] = [gen3Names[i]
+                                    for i in range(0, len(gen3Names))]
+            pokemonBox['state'] = 'readonly'
+            pokemonBox.pack()
+            currentDict = gen3Yield
+        case 4:
+            gen4Names = []
+            for key in gen4Yield.keys():
+                gen4Names.append(key.capitalize())
+            pokemonBox['values'] = [gen4Names[i]
+                                    for i in range(0, len(gen4Names))]
+            pokemonBox['state'] = 'readonly'
+            pokemonBox.pack()
+            currentDict = gen4Yield
+        case 5:
+            gen5Names = []
+            for key in gen5Yield.keys():
+                gen5Names.append(key.capitalize())
+            pokemonBox['values'] = [gen5Names[i]
+                                    for i in range(0, len(gen5Names))]
+            pokemonBox['state'] = 'readonly'
+            pokemonBox.pack()
+            currentDict = gen5Yield
+        case 6:
+            gen6Names = []
+            for key in gen6Yield.keys():
+                gen6Names.append(key.capitalize())
+            pokemonBox['values'] = [gen6Names[i]
+                                    for i in range(0, len(gen6Names))]
+            pokemonBox['state'] = 'readonly'
+            pokemonBox.pack()
+            currentDict = gen6Yield
+        case 7:
+            gen7Names = []
+            for key in gen7UltYield.keys():
+                gen7Names.append(key.capitalize())
+            pokemonBox['values'] = [gen7Names[i]
+                                    for i in range(0, len(gen7Names))]
+            pokemonBox['state'] = 'readonly'
+            pokemonBox.pack()
+            currentDict = gen7UltYield
+        case 8:
+            gen8Names = []
+            for key in gen8Yield.keys():
+                gen8Names.append(key.capitalize())
+            pokemonBox['values'] = [gen8Names[i]
+                                    for i in range(0, len(gen8Names))]
+            pokemonBox['state'] = 'readonly'
+            pokemonBox.pack()
+            currentDict = gen8Yield
+        case 9:
+            pass
 
 
 # Enabes/Disables EXP Share field on check/uncheck of EXP Share checkbox
