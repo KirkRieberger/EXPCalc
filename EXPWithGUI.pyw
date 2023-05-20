@@ -181,8 +181,10 @@ def genVmain():
 
     return (floor(exp))
 
-
+# TODO: Gen 6 evolution detection
 # Calls calculation functions, and updates output
+
+
 def go():
     if (generation.get() == 1 or generation.get() == 2 or generation.get() == 3
        or generation.get() == 4 or generation.get() == 6):
