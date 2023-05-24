@@ -429,7 +429,7 @@ gen9Yield = gen8Yield | gen9Update
 def genThree():
     """
     Calculates the Experience Yield of a particular Pokemon in Generation III
-    Uses command line arguments to test functionality
+    Uses command line input to test functionality
 
         Parameters: None, command line
 
