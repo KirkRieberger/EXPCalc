@@ -8,6 +8,7 @@ from math import floor
 from sys import exit
 
 # TODO: Add file based calculation/batch calculation
+# TODO: Try sys.version_info to enforce Python 3.9+
 
 # Dictionaries containing the exp values for each Pokemon
 # Pokemon Red/Blue/Green/Yellow
