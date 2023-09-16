@@ -215,8 +215,7 @@ def genVmain():
 
 
 def go():
-    if (generation.get() == 1 or generation.get() == 2 or generation.get() == 3
-       or generation.get() == 4 or generation.get() == 6):
+    if (generation.get() not in scaled):
         if expShare.get():
             exp = ItoIVandVIMain()
             shared = ItoIVandVIShared()
@@ -228,13 +227,13 @@ def go():
             resultLabel.config(text=msg)
 
     # TODO: Gen 5 EXP Share
-    elif (generation.get() == 5):
+    elif (generation.get() in scaled):
         exp = genVmain()
         msg = f'EXP Points Gained: {exp}'
         resultLabel.config(text=msg)
 
     else:
-        resultLabel.config(text="Not yet implemented")
+        resultLabel.config(text="Invalid Generation!")
 
 
 # EXP yields by generation
@@ -687,6 +686,7 @@ gen9Yield = gen8Yield | gen9Update
 
 # Globals
 currentDict = gen3Yield  # Default value
+scaled = [5, 7, 8, 9]
 
 # Create main window
 root = tk.Tk()
