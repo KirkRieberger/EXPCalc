@@ -116,7 +116,7 @@ def shareNumberUpdate():
 
 
 # EXP calculation for pokemon on field
-def nonscaledMain():
+def nonScaledMain():
     global currentDict
     if trainer.get() == 1:
         a = 1.5
@@ -217,12 +217,12 @@ def scaledMain():
 def go():
     if (generation.get() not in scaled):
         if expShare.get():
-            exp = nonscaledMain()
+            exp = nonScaledMain()
             shared = nonScaledShared()
             msg = f'Main EXP Points Gained: {exp}, Shared EXP Points Gained: {shared}'
             resultLabel.config(text=msg)
         else:
-            exp = nonscaledMain()
+            exp = nonScaledMain()
             msg = f'EXP Points Gained: {exp}'
             resultLabel.config(text=msg)
 
