@@ -116,7 +116,7 @@ def shareNumberUpdate():
 
 
 # EXP calculation for pokemon on field
-def ItoIVandVIMain():
+def nonscaledMain():
     global currentDict
     if trainer.get() == 1:
         a = 1.5
@@ -148,7 +148,7 @@ def ItoIVandVIMain():
 
 
 # EXP calculation for pokemon in party holding EXP Share
-def ItoIVandVIShared():
+def nonScaledShared():
     global currentDict
     if trainer.get() == 1:
         a = 1.5
@@ -177,7 +177,7 @@ def ItoIVandVIShared():
     return (floor((a*t*b*e*L)/(7*s)))
 
 
-def genVmain():
+def scaledMain():
 
     global currentDict
     if trainer.get() == 1:
@@ -217,18 +217,18 @@ def genVmain():
 def go():
     if (generation.get() not in scaled):
         if expShare.get():
-            exp = ItoIVandVIMain()
-            shared = ItoIVandVIShared()
+            exp = nonscaledMain()
+            shared = nonScaledShared()
             msg = f'Main EXP Points Gained: {exp}, Shared EXP Points Gained: {shared}'
             resultLabel.config(text=msg)
         else:
-            exp = ItoIVandVIMain()
+            exp = nonscaledMain()
             msg = f'EXP Points Gained: {exp}'
             resultLabel.config(text=msg)
 
     # TODO: Gen 5 EXP Share
     elif (generation.get() in scaled):
-        exp = genVmain()
+        exp = scaledMain()
         msg = f'EXP Points Gained: {exp}'
         resultLabel.config(text=msg)
 
