@@ -651,7 +651,38 @@ gen8Update = {'grookey': 62, 'thwackey': 147, 'rillaboom': 265, 'scorbunny': 62,
               'sneasler': -1, 'overquill': -1, 'enamorus': -1}
 gen8Yield = gen7UltYield | gen8Update
 # Pokemon Scarlet/Violet
-gen9Update = {}
+gen9Update = {'Sprigatito': 62, 'Floragato': 144, 'Meowscarada': 265,
+              'Fuecoco': 62, 'Crocalor': 144, 'Skeledirge': 265, 'Quaxly': 62,
+              'Quaxwell': 144, 'Quaquaval': 265, 'Lechonk': 51,
+              'Oinkologne': 171, 'Tarountula': 42, 'Spidops': 141, 'Nymble': 42,
+              'Lokix': 158, 'Pawmi': 48, 'Pawmo': 123, 'Pawmot': 245,
+              'Tandemaus': 61, 'Maushold': 165, 'Fidough': 62, 'Dachsbun': 167,
+              'Smoliv': 52, 'Dolliv': 124, 'Arboliva': 255, 'Squawkabilly': 146,
+              'Nacli': 56, 'Naclstack': 124, 'Garganacl': 250, 'Charcadet': 51,
+              'Armarouge': 263, 'Ceruledge': 263, 'Tadbulb': 54,
+              'Bellibolt': 173, 'Wattrel': 56, 'Kilowattrel': 172,
+              'Maschiff': 68, 'Mabosstiff': 177, 'Shroodle': 58,
+              'Grafaiai': 170, 'Bramblin': 55, 'Brambleghast': 168,
+              'Toedscool': 67, 'Toedscruel': 180, 'Klawf': 158, 'Capsakid': 61,
+              'Scovillain': 170, 'Rellor': 54, 'Rabsca': 165, 'Flittle': 51,
+              'Espathra': 168, 'Tinkatink': 59, 'Tinkatuff': 133,
+              'Tinkaton': 253, 'Wiglett': 49, 'Wugtrio': 149, 'Bombirdier': 243,
+              'Finizen': 63, 'PalafinZero Form': 160, 'PalafinHero Form': 160,
+              'Varoom': 60, 'Revavroom': 175, 'Cyclizar': 175, 'Orthworm': 240,
+              'Glimmet': 70, 'Glimmora': 184, 'Greavard': 58, 'Houndstone': 171,
+              'Flamigo': 175, 'Cetoddle': 67, 'Cetitan': 182, 'Veluza': 167,
+              'Dondozo': 265, 'Tatsugiri': 166, 'Annihilape': 268,
+              'Clodsire': 151, 'Farigiraf': 260, 'Dudunsparce': 182,
+              'Kingambit': 275, 'Great Tusk': 285, 'Scream Tail': 285,
+              'Brute Bonnet': 285, 'Flutter Mane': 285, 'Slither Wing': 285,
+              'Sandy Shocks': 285, 'Iron Treads': 285, 'Iron Bundle': 285,
+              'Iron Hands': 285, 'Iron Jugulis': 285, 'Iron Moth': 285,
+              'Iron Thorns': 285, 'Frigibax': 64, 'Arctibax': 148,
+              'Baxcalibur': 300, 'Gimmighoul': 60, 'Gholdengo': 275,
+              'Wo-Chien': 285, 'Chien-Pao': 285, 'Ting-Lu': 285, 'Chi-Yu': 285,
+              'Roaring Moon': 295, 'Iron Valiant': 295,
+              'KoraidonApex Build': 335, 'MiraidonUltimate Mode': 335,
+              'Walking Wake': 295, 'Iron Leaves': 295}
 gen9Yield = gen8Yield | gen9Update
 
 # Globals
