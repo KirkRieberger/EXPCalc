@@ -6,7 +6,7 @@
 import requests
 import time
 import sys
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup  # Useless Change
 
 start = time.perf_counter()
 
